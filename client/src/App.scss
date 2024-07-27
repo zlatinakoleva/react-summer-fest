@@ -1,0 +1,883 @@
+//Variables
+$font-size-base: 1.8rem;
+$font-weight-base: 500;
+$line-height-base: 1.2;
+
+$ff-sans-serif: "Karla", sans-serif;
+
+$ff-serif: Georgia, "Times New Roman", Times, serif;
+
+$t-duration: 0.4s;
+
+$shell-max-width: 144rem;
+$shell-gutter: 1.5rem;
+
+$black: #000;
+$white: #fff;
+$base: #00101f;
+
+$responsive-ios: 812px;
+
+$blue-light: #e4f1ff;
+$blue-medium: #27496d;
+$blue-main: #00909e;
+$blue-dark: #142850;
+$yellow-light: #f7dc8c;
+$yellow-medium: #f2c744;
+$yellow-dark: #f2c644;
+$orange: #f26f44;
+
+$box-radius: 0.6rem;
+$box-radius-l: 1.2rem;
+
+$shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+$shadow-2: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+$shadow-3: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+$breakpoints: (
+    mobile-small: 374px,
+    mobile-medium: 575px,
+    mobile: 767px,
+    admin-bar: 782px,
+    tablet: 1023px,
+    small-desktop: 1250px,
+    large-desktop: 1399px,
+);
+
+/* ------------------------------------------------------------ *\
+  SCSS Functions
+\* ------------------------------------------------------------ */
+
+@function breakpoint-next($name,
+    $breakpoints: $breakpoints,
+    $breakpoint-names: map-keys($breakpoints)) {
+    $n: index($breakpoint-names, $name);
+    @return if($n !=null and $n < length($breakpoint-names),
+        nth($breakpoint-names, $n + 1),
+        null);
+}
+
+@function breakpoint-min($name, $breakpoints: $breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min !=0, $min + 0.02, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $breakpoints) {
+    $max: map-get($breakpoints, $name);
+    @return if($max !=0, $max, null);
+}
+
+/* ------------------------------------------------------------ *\
+  Mixins
+\* ------------------------------------------------------------ */
+
+@mixin clearfix {
+    content: "";
+    line-height: 0;
+    display: table;
+    clear: both;
+}
+
+@mixin breakpoint-up($name, $breakpoints: $breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+
+    @media (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($name, $breakpoints: $breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+
+    @if $max ==767px {
+
+        @media (max-width: $max),
+        screen and (max-width: $responsive-ios) and (orientation: landscape) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (max-width: $max) {
+            @content;
+        }
+    }
+}
+
+@mixin breakpoint-between($lower, $upper, $breakpoints: $breakpoints) {
+    $min: breakpoint-min($lower, $breakpoints);
+    $max: breakpoint-max($upper, $breakpoints);
+
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+/* ------------------------------------------------------------ *\
+  Helpers
+\* ------------------------------------------------------------ */
+
+/*  Clear  */
+
+.clear:after {
+    content: "";
+    line-height: 0;
+    display: table;
+    clear: both;
+}
+
+/* sr-only */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*  Notext  */
+
+.notext {
+    white-space: nowrap;
+    text-indent: 100%;
+    text-shadow: none;
+    overflow: hidden;
+}
+
+.notext-old {
+    font-size: 0;
+    line-height: 0;
+    text-indent: -4000px;
+}
+
+/*  Hidden  */
+
+[hidden],
+.hidden {
+    display: none;
+}
+
+/*  Disabled  */
+
+[disabled],
+.disabled {
+    cursor: default;
+}
+
+/*  Responsive Helpers  */
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+    display: none !important;
+}
+
+@include breakpoint-down(mobile) {
+    .hidden-xs {
+        display: none !important;
+    }
+
+    .visible-xs-block {
+        display: block !important;
+    }
+
+    .visible-xs-inline {
+        display: inline !important;
+    }
+
+    .visible-xs-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@include breakpoint-between(mobile, tablet) {
+    .hidden-sm {
+        display: none !important;
+    }
+
+    .visible-sm-block {
+        display: block !important;
+    }
+
+    .visible-sm-inline {
+        display: inline !important;
+    }
+
+    .visible-sm-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@include breakpoint-between(tablet, small-desktop) {
+    .hidden-md {
+        display: none !important;
+    }
+
+    .visible-md-block {
+        display: block !important;
+    }
+
+    .visible-md-inline {
+        display: inline !important;
+    }
+
+    .visible-md-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@include breakpoint-up(small-desktop) {
+    .hidden-lg {
+        display: none !important;
+    }
+
+    .visible-lg-block {
+        display: block !important;
+    }
+
+    .visible-lg-inline {
+        display: inline !important;
+    }
+
+    .visible-lg-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@keyframes tilt-shaking {
+    0% {
+        transform: skewX(-15deg);
+    }
+
+    5% {
+        transform: skewX(15deg);
+    }
+
+    10% {
+        transform: skewX(-15deg);
+    }
+
+    15% {
+        transform: skewX(15deg);
+    }
+
+    20% {
+        transform: skewX(0deg);
+    }
+
+    100% {
+        transform: skewX(0deg);
+    }
+}
+
+.shake {
+    animation: tilt-shaking 1.6s 6s infinite;
+}
+
+/* ------------------------------------------------------------ *\
+	Base
+\* ------------------------------------------------------------ */
+
+:root {
+    --primary: #fa6121;
+    --primary-75: rgba(250, 97, 33, 0.25);
+    --secondary: #ffb638;
+    --secondary-75: rgba(255, 182, 56, 0.5);
+    --blue-100: #dbe8f9;
+    --blue-200: #a0aec1;
+    --blue-300: rgb(98, 120, 148);
+    --blue-400: #466289;
+    --blue-500: #263844;
+    --blue-500-80: rgb(38, 56, 68, 0.8);
+    --black: #1d1d1d;
+    --white: #f1f1f1;
+    --spacing: 1.2rem;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-width: 320px;
+    background: #fff;
+    font-family: $ff-sans-serif;
+    font-weight: $font-weight-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    letter-spacing: .05em;
+    color: #151515;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &[href^="tel"] {
+        text-decoration: none;
+    }
+}
+
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+    margin-bottom: calc(#{$line-height-base}em / 2);
+    line-height: 1.2;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+}
+
+.h1,
+h1 {
+    font-size: 7rem;
+}
+
+.h2,
+h2 {
+    font-size: 3.6rem;
+}
+
+.h3,
+h3 {
+    font-size: 3.2rem;
+}
+
+.h4,
+h4 {
+    font-size: 2.4rem;
+}
+
+.h5,
+h5 {
+    font-size: 1.8rem;
+}
+
+.h6,
+h6 {
+    font-size: 1.6rem;
+}
+
+/*  Tablet  */
+
+@include breakpoint-down(tablet) {
+
+    .h1,
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    .h2,
+    h2 {
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+}
+
+/*  Mobile  */
+
+@include breakpoint-down(mobile) {
+
+    .h1,
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .h2,
+    h2 {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+    }
+}
+
+p,
+ul,
+ol,
+dl,
+hr,
+table,
+blockquote {
+    margin-bottom: #{$line-height-base}em;
+}
+
+h1[class],
+h2[class],
+h3[class],
+h4[class],
+h5[class],
+h6[class],
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child,
+p:last-child,
+ul:last-child,
+ol:last-child,
+dl:last-child,
+table:last-child,
+blockquote:last-child {
+    margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------ *\
+	Theme Sections
+\* ------------------------------------------------------------ */
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-blue-100 {
+    background-color: var(--blue-100);
+}
+
+.bg-blue-200 {
+    background-color: var(--blue-200);
+}
+
+.bg-blue-300 {
+    background-color: var(--blue-300);
+}
+
+.bg-blue-400 {
+    background-color: var(--blue-400);
+    color: var(--white);
+}
+
+.bg-blue-500 {
+    background-color: var(--blue-500);
+    color: var(--white);
+}
+
+.bg-primary {
+    background-color: var(--primary-75);
+    color: var(--black);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-75);
+    color: var(--black);
+}
+
+/* ------------------------------------------------------------ *\
+    Form
+\* ------------------------------------------------------------ */
+
+.form {
+    .form__head>*:last-child {
+        margin-bottom: 1.6rem;
+    }
+
+    .form__label,
+    label {
+        font-size: 1.6rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: .8rem;
+    }
+
+    input,
+    select,
+    textarea {
+        border: none;
+        height: 4.8rem;
+        width: 100%;
+        font-size: 1.6rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 1rem;
+        color: var(--blue-500);
+    }
+
+    textarea {
+        height: auto;
+        min-height: 12rem;
+        height: 12rem;
+        padding: 1.5rem 0;
+        resize: none;
+    }
+
+    .form__head {
+        margin-bottom: 3.2rem;
+    }
+
+    .form__body {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -0.4rem;
+        margin-bottom: 4rem;
+    }
+
+    .form__row {
+        max-width: 100%;
+        flex: 0 0 100%;
+        padding: 0.4rem;
+
+        &:not(:last-child) {
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    .form__field {
+        padding: 1rem 1rem 0;
+        background-color: $white;
+        border: 0.1rem solid $blue-main;
+        border-radius: $box-radius;
+        height: 100%;
+        position: relative;
+    }
+
+    .form__row--1of2 {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+
+    .form__actions {
+        input {
+            width: auto;
+            padding: 0 1.5rem;
+        }
+    }
+
+    .form__field--switch {
+        position: relative;
+        overflow: hidden;
+
+        .form__main {
+            padding-right: 10rem;
+        }
+
+        .form__switch {
+            padding: 1rem;
+            text-align: right;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .form__label {
+            margin-bottom: 1.2rem;
+        }
+
+        &.show-children {
+            .form__switch-children {
+                opacity: 1;
+                visibility: visible;
+                position: relative;
+                top: 0;
+                left: 0;
+                transition: opacity 0.2s;
+            }
+        }
+    }
+
+    .form__switch-children {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: -999rem;
+        left: -999rem;
+
+        .form__cols {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -0.5rem;
+            padding: 1rem 0;
+        }
+
+        .form__col {
+            max-width: 100%;
+            min-width: 33.33%;
+            flex: 1;
+            padding: 0.5rem;
+
+            /*  Mobile  */
+
+            @include breakpoint-down(mobile) {
+                min-width: 50%;
+            }
+        }
+    }
+
+    .form__controls {
+        position: relative;
+    }
+
+    input:focus+div.ff_validation_error {
+        opacity: 0;
+    }
+
+    div.ff_validation_error {
+        color: red;
+        font-size: 1.2rem;
+        font-weight: 600;
+        height: 4.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        z-index: 99;
+        pointer-events: none;
+    }
+}
+
+/* ------------------------------------------------------------ *\
+    form--alt
+\* ------------------------------------------------------------ */
+
+.form--alt {
+    padding: 3.2rem;
+    background: linear-gradient(-45deg,
+            rgba(228, 241, 255, 0.8) 0%,
+            rgba(247, 220, 140, 0.2) 100%);
+    border-radius: $box-radius-l;
+    box-shadow: $shadow-2;
+}
+
+/* ------------------------------------------------------------ *\
+  section-form
+\* ------------------------------------------------------------ */
+
+.section-form {
+    padding: 9.6rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+
+
+    .section__inner {
+        max-width: 50rem;
+        margin: 0 auto;
+    }
+}
+
+/* ------------------------------------------------------------ *\
+	Button
+\* ------------------------------------------------------------ */
+
+.btn {
+    --bgColor: #142850;
+    --bgColorHover: #00909e;
+    --color: #fff;
+    --colorHover: #fff;
+    box-shadow: none;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+    height: 4rem;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    appearance: none;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--bgColor);
+    color: var(--color);
+    font-weight: 600;
+    font-size: 1.6rem;
+    border-radius: 0.6rem;
+    transition: 0.4s;
+    white-space: nowrap;
+
+    /*  Tablet  */
+
+    @include breakpoint-down(tablet) {
+        padding: 1rem 1.2rem;
+    }
+
+    /*  Mobile  */
+
+    @include breakpoint-down(mobile) {
+        font-size: 1.4rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    &.outline {
+        background-color: transparent;
+        color: var(--bgColor);
+        box-shadow: inset 0 0 0 0.2rem var(--bgColor);
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                box-shadow: inset 0 0 0 0.2rem var(--bgColorHover);
+            }
+        }
+
+        @media all and (-ms-high-contrast: none),
+        (-ms-high-contrast: active) {
+            &:hover {
+                box-shadow: inset 0 0 0 0.2rem var(--bgColorHover);
+            }
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background-color: var(--bgColorHover);
+            color: var(--colorHover);
+        }
+    }
+
+    @media all and (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
+        &:hover {
+            background-color: var(--bgColorHover);
+            color: var(--colorHover);
+        }
+    }
+
+    &.secondary {
+        --bgColor: #f26f44;
+        --bgColorHover: #f2c744;
+        --color: #fff;
+        --colorHover: #00101f;
+    }
+
+    &.tertiary {
+        --bgColor: #e4f1ff;
+        --bgColorHover: #00909e;
+        --color: #00101f;
+        --colorHover: #fff;
+    }
+}
+
+.buttons {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    margin: -0.5rem !important;
+    list-style-type: none !important;
+
+    li {
+        padding: 0.5rem !important;
+
+        &:before {
+            display: none !important;
+        }
+    }
+}
+
+/*  Btn block  */
+
+.btn--block {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* ------------------------------------------------------------ *\
+	Logo
+\* ------------------------------------------------------------ */
+
+.logo {
+    max-width: 9rem;
+    height: auto;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 29px 0px;
+    transform-origin: top left;
+    transition: .4s;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 99;
+    backface-visibility: hidden;
+
+    @media (hover: hover) {
+        &:where(:hover, :focus-visible) {
+            transform: scale(1.1);
+        }
+    }
+}
+
+/* ------------------------------------------------------------ *\
+  Popup
+\* ------------------------------------------------------------ */
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 102;
+    padding: 4rem 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--black);
+
+    .popup__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+    }
+
+    .popup__inner {
+        max-width: 65rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: 8rem 6.4rem;
+        background-color: var(--white);
+        position: relative;
+        z-index: 2;
+        border-radius: 2.4rem;
+    }
+
+    .popup__close {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 2;
+        ;
+        width: 4rem;
+        height: 4rem;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
