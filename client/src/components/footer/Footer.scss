@@ -1,0 +1,61 @@
+/* ------------------------------------------------------------ *\
+    Footer
+\* ------------------------------------------------------------ */
+
+.footer {
+    background-color: var(--blue-200);
+    padding: 4.8rem 0 2.4rem;
+    position: relative;
+    z-index: 100;
+
+    .footer__logo {
+        max-width: 8rem;
+        margin: 0 auto 2.4rem;
+        display: block;
+    }
+
+    .footer__nav {
+        padding: 0 0 2.4rem;
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+        }
+
+        li {
+            padding: 0 1.6rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .footer__copyright {
+        text-align: center;
+        opacity: .5;
+    }
+
+    .socials {
+        margin-bottom: 2.4rem;
+    }
+}
+
+.socials {
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+    }
+
+    li {
+        padding: 0 .8rem;
+    }
+
+    a {
+        max-width: 4rem;
+        display: inline-block;
+    }
+}
