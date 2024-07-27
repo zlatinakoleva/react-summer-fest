@@ -1320,13 +1320,8 @@
     var protectedData = {
     	users: {
     		"35c62d76-8152-4626-8712-eeb96381bea8": {
-    			email: "peter@abv.bg",
-    			username: "Peter",
-    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
-    		},
-    		"847ec027-f659-4086-8032-5173e2f9c93a": {
-    			email: "george@abv.bg",
-    			username: "George",
+    			email: "zk_98@abv.bg",
+    			username: "Zlatina",
     			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
     		},
     		"60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
@@ -1339,6 +1334,57 @@
     	}
     };
     var seedData = {
+        merch: {
+            "868e8be0-314e-4749-9582-c68fcf962b3d": {
+                title: "T-Shirts & Hoodies",
+                description: "Stylish, comfortable t-shirts and hoodies with unique festival graphics. Show off your festival spirit.",
+                image: "../public/images/svg/hoodie.svg",
+                id: "868e8be0-314e-4749-9582-c68fcf962b3d"
+            },
+            "bf36eddd-d2e6-46d2-82ab-8dc813b91261": {
+                title: "Caps & Beanies",
+                description: "Trendy caps and beanies for sun protection or warmth. Essential for every festival-goer.",
+                image: "../public/images/svg/cap.svg",
+                id: "bf36eddd-d2e6-46d2-82ab-8dc813b91261"
+            },
+            "a8ec5ee2-c32c-4325-8ce9-c741bcdc0a01": {
+                title: "Tote Bags & Backpacks",
+                description: "Durable, stylish tote bags and backpacks featuring exclusive festival designs. Carry essentials in style.",
+                image: "../public/images/svg/backpack.svg",
+                id: "a8ec5ee2-c32c-4325-8ce9-c741bcdc0a01"
+            },
+            "5ae1b472-feb5-4f57-88af-1796aa4dde94": {
+                title: "Posters & Art Prints",
+                description: "Limited edition posters and art prints with stunning festival-inspired designs. Take the festival home.",
+                image: "../public/images/svg/poster.svg",
+                id: "5ae1b472-feb5-4f57-88af-1796aa4dde94"
+            },
+            "c6825714-88af-4c76-901f-55d5860841a6": {
+                title: "Souvenirs & Collectibles",
+                description: "Keychains, badges, and more. Perfect mementos of your unforgettable festival experience.",
+                image: "../public/images/svg/coolectibles.svg",
+                id: "c6825714-88af-4c76-901f-55d5860841a6"
+            },
+            "71a45582-2851-452f-882a-32fa27c85c0b": {
+                title: "Awesome Keychains",
+                description: "Durable keychains with intricate festival designs. Perfect for keys, backpacks, or purses.",
+                image: "../public/images/svg/keychain.svg",
+                id: "71a45582-2851-452f-882a-32fa27c85c0b"
+            },
+            "e70a64b4-5caf-4d25-afe5-709fba5e24fc": {
+                title: "Phone Cases",
+                description: "High-quality phone cases with vibrant festival artwork. Excellent protection and slim design.",
+                image: "../public/images/svg/phone-case.svg",
+                id: "e70a64b4-5caf-4d25-afe5-709fba5e24fc"
+            },
+            "6787e646-749e-498a-8768-15276a8cf303": {
+                title: "Eco-Friendly Water Bottles",
+                description: "Reusable water bottles with festival designs. Stay hydrated and environmentally conscious.",
+                image: "../public/images/svg/water-bottle.svg",
+                id: "6787e646-749e-498a-8768-15276a8cf303"
+            }
+
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1476,10 +1522,6 @@
     			_createdOn: 1614760782277,
     			_id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d"
     		}
-    	},
-    	furniture: {
-    	},
-    	orders: {
     	},
     	movies: {
     		"1240549d-f0e0-497e-ab99-eb8f703713d7": {
