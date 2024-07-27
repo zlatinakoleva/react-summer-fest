@@ -1,0 +1,30 @@
+.countdown {
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0,0,0,.4);
+        backdrop-filter: blur(4px);
+    }
+
+    li {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 18rem;
+        height: 18rem;
+        padding: 1rem;
+        text-align: center;
+        
+    }
+
+    h2 {
+        font-size: 5.4rem;
+        margin-bottom: 0;
+    }
+
+    p {
+        opacity: .75;
+    }
+}
