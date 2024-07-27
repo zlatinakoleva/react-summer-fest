@@ -307,6 +307,13 @@ $breakpoints: (
     --black: #1d1d1d;
     --white: #f1f1f1;
     --spacing: 1.2rem;
+    --box-radius: .6rem;
+    --box-radius-l: 1.2rem;
+    --shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+        rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    --shadow-2: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+        rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    --shadow-3: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 html {
@@ -514,7 +521,6 @@ blockquote:last-child {
         font-size: 1.6rem;
         text-overflow: ellipsis;
         overflow: hidden;
-        white-space: nowrap;
         padding: 1rem;
         color: var(--blue-500);
     }
@@ -523,7 +529,7 @@ blockquote:last-child {
         height: auto;
         min-height: 12rem;
         height: 12rem;
-        padding: 1.5rem 0;
+        padding: 1.5rem;
         resize: none;
     }
 
@@ -535,7 +541,7 @@ blockquote:last-child {
         display: flex;
         flex-wrap: wrap;
         margin: -0.4rem;
-        margin-bottom: 4rem;
+        margin-bottom: 3.2rem;
     }
 
     .form__row {
@@ -560,6 +566,11 @@ blockquote:last-child {
     .form__row--1of2 {
         max-width: 50%;
         flex: 0 0 50%;
+    }
+
+    .form__errors {
+        margin-bottom: 3.2rem;
+        color: #ff2c2c;
     }
 
     .form__actions {
@@ -802,6 +813,25 @@ blockquote:last-child {
     padding-right: 0;
 }
 
+.btn-plain {
+    border: none;
+    display: inline-block;
+}
+
+.admin-buttons {
+    .btn-plain {
+        width: 4rem;
+        height: 4rem;
+        padding: .8rem;
+        background-color: var(--blue-500);
+        display: inline-block;
+        border-radius: 50%;
+    }
+
+    .btn-plain + .btn-plain {
+        margin-left: .4rem;
+    }
+}
 
 /* ------------------------------------------------------------ *\
 	Logo

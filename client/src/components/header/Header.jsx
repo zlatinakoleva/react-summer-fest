@@ -1,8 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import './Header.scss'
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/authContext";
 
 export default function Header() {
     const location = useLocation();
+    const {isAuthenticated, name} = useContext(AuthContext)
     return (
         <>
             <div className="logo">
@@ -23,18 +26,33 @@ export default function Header() {
                 </div>
 
                 <div>
-                    <ul>
-                        <li>
-                            <Link to="/login" state={{ background: location }}>
-                                Login
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/register" state={{ background: location }}>
-                                Register
-                            </Link>
-                        </li>
-                    </ul>
+                    {!isAuthenticated &&
+                        <ul>
+                            <li>
+                                <Link to="/login" state={{ background: location }}>
+                                    Login
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/register" state={{ background: location }}>
+                                    Register
+                                </Link>
+                            </li>
+                        </ul>
+                    }
+
+                    {isAuthenticated &&
+                        <ul>
+                            <li>
+                                <p>{name}</p>
+                            </li>
+                            <li>
+                                <Link to="/register" state={{ background: location }}>
+                                    Logout
+                                </Link>
+                            </li>
+                        </ul>
+                    }
                 </div>
 
                 <div>
