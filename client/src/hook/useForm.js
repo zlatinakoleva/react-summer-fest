@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function useForm(submitCallback, initialValues) {
+export default function useForm(submitCallback, initialValues) {
     const [formValues, setFormValues] = useState(initialValues)
 
     const onChange = (e) => {
