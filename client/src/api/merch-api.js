@@ -1,0 +1,24 @@
+import * as request from '../api/requester';
+const baseUrl = 'http://localhost:3030/data/merch'
+
+export const getAll = async () => {
+    const result = await request.get(baseUrl);
+
+    return result;
+};
+
+export const edit = async (merchItemID, merchItemData) => {
+    const result = await request.put(`${baseUrl}/${merchItemID}`, merchItemData);
+
+    return result;
+};
+
+export const create = async (merchItemData) => {
+    const result = await request.post(baseUrl, merchItemData);
+
+    return result;
+};
+
+
+export const remove = async (merchItemID) => request.remove(`${baseUrl}/${merchItemID}`);
+
