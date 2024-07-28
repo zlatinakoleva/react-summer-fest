@@ -3,7 +3,7 @@ import { createContext, useState, useContext } from "react";
 export const AuthContext = createContext({
     email: '',
     accessToken: '',
-    isAuthenticated: false,
+    authType: "user_not_logged",
     changeAuthState: (authState = {}) => null
 });
 
@@ -13,11 +13,15 @@ export function AuthContextProvider(props) {
         localStorage.setItem('accessToken', state.accessToken)
         setAuthState(state)
     }
+
+    console.log(authState.authType)
+    
     const contextData = {
         email: authState.email,
         name: authState.username,
         accessToken: authState.accessToken,
-        isAuthenticated: !!authState.email,
+        authType: !!authState.email,
+        userType: authState.status || "user_not_logged",
         changeAuthState
     }
 

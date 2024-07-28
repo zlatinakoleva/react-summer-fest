@@ -5,12 +5,12 @@ import { useAuthContext } from "../../../contexts/authContext";
 export default function MerchItem({
     merchItem
 }) {
-    const {isAuthenticated} = useAuthContext();
+    const {userType} = useAuthContext();
     
     return (
         <div className="grid__col grid__col--1of4">
             <div className="tile">
-                { isAuthenticated && 
+                { userType == "user_admin" && 
                     <div className="admin-buttons">
                         <button className="btn-plain">
                             <img src="../../public/images/svg/edit.svg" alt="delete" />

@@ -6,7 +6,7 @@ import { useAuthContext } from "../../../contexts/authContext";
 
 export default function MerchList() {
     const location = useLocation();
-    const {isAuthenticated} = useAuthContext();
+    const {userType} = useAuthContext();
     
     const [merchItems] = useGetAllMerchItems()
 
@@ -18,7 +18,7 @@ export default function MerchList() {
                         <div className="section__head">
                             <h1>Festival Merchandise</h1>
                         </div>
-                        { isAuthenticated && 
+                        { userType == "user_admin" && 
                             <div className="section__admin-button">
                                 <Link to="/merch/create-merch-item" state={{ background: location }} className='btn'>
                                     Add Merch Item

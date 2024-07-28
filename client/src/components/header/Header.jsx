@@ -4,7 +4,8 @@ import { useAuthContext } from "../../contexts/authContext";
 
 export default function Header() {
     const location = useLocation();
-    const {isAuthenticated, name, email} = useAuthContext()
+    const {userType, name, email} = useAuthContext()
+    console.log(userType)
     return (
         <>
             <div className="logo">
@@ -25,7 +26,8 @@ export default function Header() {
                 </div>
 
                 <div>
-                    {!isAuthenticated &&
+                    
+                    {userType == "user_not_logged"  &&
                         <ul>
                             <li>
                                 <Link to="/login" state={{ background: location }}>
@@ -40,10 +42,16 @@ export default function Header() {
                         </ul>
                     }
 
-                    {isAuthenticated &&
+                    {userType != "user_not_logged" &&
                         <ul>
                             <li>
-                                <p>{name || email}</p>
+                                <p>
+                                    {userType == "user_admin" && 
+                                        <span>Admin - </span>
+                                    }
+
+                                    {name || email}
+                                </p>
                             </li>
                             <li>
                                 <Link to="/register" state={{ background: location }}>

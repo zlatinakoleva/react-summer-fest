@@ -22,7 +22,6 @@ export default function Register() {
 
     const registerHandler = async (formValues) => {
         if (formValues.password !== formValues['confirm-password']) {
-            console.log(formValues)
             return setError('Password missmatch')
         }
 
