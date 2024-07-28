@@ -54,7 +54,7 @@ export default function Header() {
                                 </p>
                             </li>
                             <li>
-                                <Link to="/register" state={{ background: location }}>
+                                <Link to="/logout">
                                     Logout
                                 </Link>
                             </li>

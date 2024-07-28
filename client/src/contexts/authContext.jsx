@@ -3,9 +3,12 @@ import usePersistedState from "../hook/usePersistedState";
 
 export const AuthContext = createContext({
     email: '',
+    name: '',
     accessToken: '',
-    authType: "user_not_logged",
-    changeAuthState: (authState = {}) => null
+    authType: '',
+    userType: '',
+    changeAuthState: (authState = {}) => null,
+    logoutAuthState: () => null
 });
 
 export function AuthContextProvider(props) {
@@ -16,15 +19,18 @@ export function AuthContextProvider(props) {
         setAuthState(state)
     }
 
-    console.log(authState.authType)
+    const logoutAuthState = () => {
+        setAuthState(null)
+    }
     
     const contextData = {
-        email: authState.email,
-        name: authState.username,
-        accessToken: authState.accessToken,
-        authType: !!authState.email,
-        userType: authState.status || "user_not_logged",
-        changeAuthState
+        email: authState?.email,
+        name: authState?.username,
+        accessToken: authState?.accessToken,
+        authType: !!authState?.email,
+        userType: authState?.status || "user_not_logged",
+        changeAuthState,
+        logoutAuthState
     }
 
     return (

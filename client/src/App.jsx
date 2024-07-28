@@ -12,7 +12,7 @@ import Merch from './components/merch/Merch';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import CreateMerchItem from './components/merch/create-merch-item/CreateMerchItem';
-
+import Logout from './components/logout/Logout';
 
 function App() {
     const location = useLocation();
@@ -28,6 +28,7 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/merch" element={<Merch />}/>
+                    <Route path="/logout" element={<Logout />}/>
                 </Routes>
                 { background && (
                     <Routes>
