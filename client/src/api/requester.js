@@ -4,6 +4,7 @@ const buildOptions = (data) => {
     if (data) {
         options.body = JSON.stringify(data);
         options.headers = {
+            ...options.headers,
             'content-type': 'application/json'
         }
     }
