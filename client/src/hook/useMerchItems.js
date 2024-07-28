@@ -14,3 +14,9 @@ export function useGetAllMerchItems() {
 
     return [merchItems]
 }
+
+export function useCreateMerchItem() {
+    const createMerchItem = (merchItemData) => merchAPI.create(merchItemData);
+    
+    return createMerchItem;
+}
