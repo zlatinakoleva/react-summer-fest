@@ -1,13 +1,12 @@
-import { useContext } from 'react'
 import './MerchList.scss'
 import MerchItem from '../merch-item/MerchItem';
 import { Link, useLocation } from "react-router-dom";
 import { useGetAllMerchItems } from '../../../hook/useMerchItems';
-import { AuthContext } from "../../../contexts/authContext";
+import { useAuthContext } from "../../../contexts/authContext";
 
 export default function MerchList() {
     const location = useLocation();
-    const {isAuthenticated} = useContext(AuthContext);
+    const {isAuthenticated} = useAuthContext();
     
     const [merchItems] = useGetAllMerchItems()
 

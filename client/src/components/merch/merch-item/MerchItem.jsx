@@ -1,12 +1,11 @@
-import { useContext } from 'react'
 import './MerchItem.scss'
-import { AuthContext } from "../../../contexts/authContext";
+import { useAuthContext } from "../../../contexts/authContext";
 
 
 export default function MerchItem({
     merchItem
 }) {
-    const {isAuthenticated} = useContext(AuthContext);
+    const {isAuthenticated} = useAuthContext();
     
     return (
         <div className="grid__col grid__col--1of4">

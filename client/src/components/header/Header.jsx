@@ -1,11 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import './Header.scss'
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/authContext";
+import { useAuthContext } from "../../contexts/authContext";
 
 export default function Header() {
     const location = useLocation();
-    const {isAuthenticated, name} = useContext(AuthContext)
+    const {isAuthenticated, name, email} = useAuthContext()
     return (
         <>
             <div className="logo">
@@ -44,7 +43,7 @@ export default function Header() {
                     {isAuthenticated &&
                         <ul>
                             <li>
-                                <p>{name}</p>
+                                <p>{name || email}</p>
                             </li>
                             <li>
                                 <Link to="/register" state={{ background: location }}>

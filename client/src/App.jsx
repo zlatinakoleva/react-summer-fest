@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.scss'
 
-import { AuthContext } from './contexts/authContext';
+import { AuthContextProvider } from './contexts/authContext';
 
 import Header from './components/header/Header'
 import Home from './components/home/Home'
@@ -20,21 +19,8 @@ function App() {
     const background = location.state && location.state.background;
     const isHome = location.pathname == "/" 
 
-    const [authState, setAuthState] = useState({})
-    const changeAuthState = (state) => {
-        localStorage.setItem('accessToken', state.accessToken)
-        setAuthState(state)
-    }
-    const contextData = {
-        email: authState.email,
-        name: authState.username,
-        accessToken: authState.accessToken,
-        isAuthenticated: !!authState.email,
-        changeAuthState
-    }
-
     return (
-        <AuthContext.Provider value={contextData}>
+        <AuthContextProvider>
             <div className="wrapper">
                 <Header/>
                 <Routes location={background || location}>
@@ -54,7 +40,7 @@ function App() {
                     <Footer/>
                 )}
             </div>
-        </AuthContext.Provider>
+        </AuthContextProvider>
     )
 }
 
