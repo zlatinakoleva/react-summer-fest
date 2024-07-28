@@ -5,7 +5,7 @@ import { useAuthContext } from "../../contexts/authContext";
 export default function Header() {
     const location = useLocation();
     const {userType, name, email} = useAuthContext()
-    console.log(userType)
+
     return (
         <>
             <div className="logo">

@@ -1,3 +1,5 @@
+import { getAccessToken } from "../utils/authUtils";
+
 const buildOptions = (data) => {
     const options = {};
 
@@ -9,7 +11,7 @@ const buildOptions = (data) => {
         }
     }
 
-    const token = localStorage.getItem('accessToken');
+    const token = getAccessToken()
 
     if (token) {
         options.headers = {
