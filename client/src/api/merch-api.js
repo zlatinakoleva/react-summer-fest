@@ -7,9 +7,14 @@ export const getAll = async () => {
     return result;
 };
 
-export const edit = async (merchItemID, merchItemData) => {
-    const result = await request.put(`${baseUrl}/${merchItemID}`, merchItemData);
+export const getOne = async (merchItemID) => {
+    const result = await request.get(`${baseUrl}/${merchItemID}`);
 
+    return result;
+};
+
+export const edit = async (merchItemData, merchItemID) => {
+    const result = await request.put(`${baseUrl}/${merchItemID}`, merchItemData);
     return result;
 };
 

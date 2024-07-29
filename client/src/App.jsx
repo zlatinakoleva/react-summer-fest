@@ -13,6 +13,7 @@ import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import CreateMerchItem from './components/merch/create-merch-item/CreateMerchItem';
 import Logout from './components/logout/Logout';
+import EditMerchItem from './components/merch/edit-merch-item/EditMerchItem';
 
 function App() {
     const location = useLocation();
@@ -35,6 +36,7 @@ function App() {
                         <Route path="login" element={<Login/>}/>
                         <Route path="register" element={<Register/>}/>
                         <Route path="merch/create-merch-item" element={<CreateMerchItem />} />
+                        <Route path="merch/edit-merch-item/:merchItemID" element={<EditMerchItem />} />
                     </Routes>
                 )}
                 { !isHome && (

@@ -15,8 +15,37 @@ export function useGetAllMerchItems() {
     return [merchItems]
 }
 
+export function useGetOneMerchItem(merchItemID) {
+    const [merchItem, setMerchItem] = useState([]);
+    
+    useEffect(() => {
+        merchAPI.getOne(merchItemID)
+            .then(result => setMerchItem(result))
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+
+    return [merchItem]
+}
+
 export function useCreateMerchItem() {
     const createMerchItem = (merchItemData) => merchAPI.create(merchItemData);
     
     return createMerchItem;
+}
+
+export function useEditMerchItem() {
+    
+    const editMerchItem = (merchItemData, merchItemID) => {
+        merchAPI.edit(merchItemData, merchItemID);
+    }
+    
+    return editMerchItem;
+}
+
+export function useDeleteMerchItem() {
+    const deleteMerchItem = (merchItemID) => merchAPI.remove(merchItemID);
+    
+    return deleteMerchItem
 }

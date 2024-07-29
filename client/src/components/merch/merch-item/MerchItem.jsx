@@ -1,21 +1,39 @@
 import './MerchItem.scss'
 import { useAuthContext } from "../../../contexts/authContext";
-
+import { Link, useLocation } from 'react-router-dom';
+import { useDeleteMerchItem } from '../../../hook/useMerchItems';
+import { useNavigate } from 'react-router-dom';
 
 export default function MerchItem({
     merchItem
 }) {
     const {userType} = useAuthContext();
+    const location = useLocation();
+    const navigate = useNavigate();
+    const deleteMerchItem = useDeleteMerchItem()
+
+    const deleteMerchItemHandler = async () => {
+        try {
+            await deleteMerchItem(`${merchItem.id}`)
+            navigate(-1)
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
     
     return (
         <div className="grid__col grid__col--1of4">
             <div className="tile">
                 { userType == "user_admin" && 
                     <div className="admin-buttons">
-                        <button className="btn-plain">
-                            <img src="../../public/images/svg/edit.svg" alt="delete" />
-                        </button>
-                        <button className="btn-plain">
+                        <Link 
+                            to={`/merch/edit-merch-item/${merchItem.id}`} 
+                            state={{ background: location }} 
+                            className="btn-plain" 
+                        >
+                            <img src="../../public/images/svg/edit.svg" alt="edit" />
+                        </Link>
+                        <button className="btn-plain" onClick={deleteMerchItemHandler}>
                             <img src="../../public/images/svg/bin.svg" alt="delete" />
                         </button>
                     </div>

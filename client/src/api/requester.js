@@ -11,7 +11,9 @@ const buildOptions = (data) => {
         }
     }
 
-    const token = getAccessToken()
+    const token = getAccessToken();
+
+    console.log(token)
 
     if (token) {
         options.headers = {

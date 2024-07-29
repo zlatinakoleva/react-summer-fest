@@ -7,5 +7,5 @@ export const getAccessToken = () => {
 
     const authData = JSON.parse(authJSON);
 
-    return authData?.getAccessToken;
+    return authData?.accessToken;
 }
