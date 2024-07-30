@@ -1,0 +1,65 @@
+/* ------------------------------------------------------------ *\
+    Section-singers
+\* ------------------------------------------------------------ */
+
+.section-singers {
+    padding: 20rem 0;
+    background-color: var(--white);
+
+    .section__head {
+        margin-bottom: 10rem;
+        text-align: center;
+    }
+
+    .grid {
+        margin: -4rem -2rem;
+        .grid__col {
+            padding: 4rem 2rem;
+        }
+    }
+}
+
+/* ------------------------------------------------------------ *\
+    tile-singer
+\* ------------------------------------------------------------ */
+
+.tile-singer {
+    text-align: center;
+    --theme-color: #3333;
+
+    figure {
+        padding-top: 100%;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 25%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 2rem solid var(--theme-color);
+            border-bottom: 0;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            min-width: 100%;
+            min-height: 100%;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .tile__content {
+        background-color: var(--theme-color);
+        color: var(--black);
+        padding: 2rem 2rem;
+    }
+}
+

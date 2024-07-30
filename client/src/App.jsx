@@ -14,6 +14,7 @@ import Footer from './components/footer/Footer';
 import CreateMerchItem from './components/merch/create-merch-item/CreateMerchItem';
 import Logout from './components/logout/Logout';
 import EditMerchItem from './components/merch/edit-merch-item/EditMerchItem';
+import SingerDetails from './components/singer-details/Singer-Details';
 
 function App() {
     const location = useLocation();
@@ -30,6 +31,8 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/merch" element={<Merch />}/>
                     <Route path="/logout" element={<Logout />}/>
+                    <Route path="/about/singers/lady-gaga" element={<SingerDetails />}/>
+
                 </Routes>
                 { background && (
                     <Routes>

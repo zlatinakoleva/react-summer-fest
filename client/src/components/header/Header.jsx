@@ -10,7 +10,7 @@ export default function Header() {
         <>
             <div className="logo">
                 <Link to="/">
-                    <img src="../public/images/svg/concert.svg" alt="" />
+                    <img src="/public/images/svg/concert.svg" alt="" />
                 </Link>
             </div>
             
