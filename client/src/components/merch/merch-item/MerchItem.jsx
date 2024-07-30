@@ -2,20 +2,17 @@ import './MerchItem.scss'
 import { useAuthContext } from "../../../contexts/authContext";
 import { Link, useLocation } from 'react-router-dom';
 import { useDeleteMerchItem } from '../../../hook/useMerchItems';
-import { useNavigate } from 'react-router-dom';
 
 export default function MerchItem({
     merchItem
 }) {
     const {userType} = useAuthContext();
     const location = useLocation();
-    const navigate = useNavigate();
     const deleteMerchItem = useDeleteMerchItem()
 
     const deleteMerchItemHandler = async () => {
         try {
             await deleteMerchItem(`${merchItem.id}`)
-            navigate(-1)
         } catch (err) {
             console.log(err.message);
         }

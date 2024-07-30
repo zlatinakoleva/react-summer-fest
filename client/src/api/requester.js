@@ -1,8 +1,8 @@
-import { getAccessToken } from "../utils/authUtils";
+import { getAccessToken, getUserType } from "../utils/authUtils";
 
 const buildOptions = (data) => {
     const options = {};
-
+ 
     if (data) {
         options.body = JSON.stringify(data);
         options.headers = {
@@ -12,6 +12,7 @@ const buildOptions = (data) => {
     }
 
     const token = getAccessToken();
+    const userType = getUserType();
 
     console.log(token)
 
@@ -19,6 +20,13 @@ const buildOptions = (data) => {
         options.headers = {
             ...options.headers,
             'X-Authorization': token
+        };
+    }
+
+    if (userType == "user_admin" && token) {
+        options.headers = {
+            ...options.headers,
+            'X-Admin': true
         };
     }
 

@@ -14,7 +14,7 @@ export const getOne = async (merchItemID) => {
 };
 
 export const edit = async (merchItemData, merchItemID) => {
-    const result = await request.put(`${baseUrl}/${merchItemID}`, merchItemData);
+    const result = await request.patch(`${baseUrl}/${merchItemID}`, merchItemData);
     return result;
 };
 
