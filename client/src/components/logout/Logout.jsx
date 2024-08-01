@@ -1,10 +1,13 @@
-import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useLogout } from "../../hook/useAuth"
+import { useEffect } from "react";
 
 export default function Logout() {
+    const navigate = useNavigate();
     const performLogout = useLogout();
-
-    performLogout()
-    
-    return <Navigate to="/"/>
+    useEffect(()=>{
+        performLogout()
+        navigate(-1)
+    },[])
+    return (<></>)
 }

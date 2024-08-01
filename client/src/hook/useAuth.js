@@ -20,12 +20,16 @@ export const useLogin = () => {
 export const useRegister = () => {
     const {changeAuthState} = useAuthContext();
 
-    const registerHandler = async (email, password) => {
-        const {password: _, ...authData} = await register(email, password);
-        
-        changeAuthState(authData);
-        
-        return authData;
+    const registerHandler = async (email, password, username) => {
+        try {
+            const {password: _, ...authData} = await register(email, password, username);
+            
+            changeAuthState(authData);
+            
+            return 'success';
+        } catch (err) {
+            return err.message;
+        }
     }
 
     return registerHandler;
@@ -35,8 +39,12 @@ export const useLogout = () => {
     const {logoutAuthState} = useAuthContext();
     
     const logoutHandler = async () => {
-        logoutAuthState();
-        await logout();
+        try {
+            await logout();
+            logoutAuthState();
+        } catch(err) {
+            console.log(err.message)
+        }
     }
     
     return logoutHandler;

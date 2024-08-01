@@ -2,39 +2,40 @@ import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useRegister } from "../../hook/useAuth";
 import useForm from "../../hook/useForm";
+import { useFormik } from "formik";
+import * as Yup from 'yup'
 
-const FormKeys = {
-    Email: 'email', 
-    Password: 'password',
-    ConfirmPassword: "confirm-password"
-}
 
 const initialValues = {
-    [FormKeys.Email]: '',
-    [FormKeys.Password]: '',
-    [FormKeys.ConfirmPassword]: '',
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
 }
 
+const validSchema = Yup.object({
+    username: Yup.string().min(3, 'Username must be at least 3 characters long').max(20, 'Username must be max 20 characters long'),
+    email: Yup.string().email('Invalid email address').required('Required'),
+    password: Yup.string().required('Required'),
+    confirmPassword: Yup.string().oneOf([Yup.ref("password"), null], "Passwords must match"),
+})
+
 export default function Register() {
-    const [error, setError] = useState('')
     const register = useRegister();
     const navigate = useNavigate();
 
-    const registerHandler = async (formValues) => {
-        if (formValues.password !== formValues['confirm-password']) {
-            return setError('Password missmatch')
+    const formik = useFormik({
+        initialValues: initialValues,
+        validationSchema: validSchema,
+        onSubmit: async (values, {setErrors}) => {
+            const registerResult = await register(values.email, values.password, values.username);
+            if (registerResult == 'success') {
+                navigate(-1);
+            } else {
+                setErrors({server: `${registerResult}`})
+            }
         }
-
-        try {
-            await register(formValues.email, formValues.password, formValues['confirm-password']);
-            navigate(-1);
-        } catch (err) {
-            setError(err.message)
-            console.log(err.message);
-        }
-    };
-
-    const { formValues, onChange, onSubmit } = useForm(registerHandler, initialValues);
+    })
 
     return (
         <div className="popup">
@@ -45,26 +46,56 @@ export default function Register() {
                 </div>
 
                 <div className="form">
-                    <form onSubmit={onSubmit}>
+                    <form onSubmit={formik.handleSubmit}>
                         <div className="form__head">
                             <h2>Register</h2>
+
+                            {formik.errors.server &&
+                                <div className="form__error">
+                                    {formik.errors.server}
+                                </div>
+                            }
                         </div>
 
                         <div className="form__body">
+                            <div className="form__row">
+                                <label htmlFor="username" className="form__label">Username</label>
+                                
+                                <div className="form__controls">
+                                    <input
+                                        type="username"
+                                        className="field"
+                                        id="username"
+                                        {...formik.getFieldProps('username')}
+                                    />
+                                </div>
+
+                                {formik.touched.username && formik.errors.username 
+                                    ? <div className="form__error">
+                                        {formik.errors.username} 
+                                    </div>
+                                    : null
+                                }
+                            </div>
+
                             <div className="form__row">
                                 <label htmlFor="email" className="form__label">Email</label>
                                 
                                 <div className="form__controls">
                                     <input
                                         type="email"
-                                        className="field"
-                                        name={FormKeys.Email}
                                         id="email"
-                                        onChange={onChange}
-                                        value={formValues[FormKeys.Email]}
-                                        placeholder="john_smith@gmail.com"
+                                        className="field"
+                                        {...formik.getFieldProps('email')}
                                     />
                                 </div>
+
+                                {formik.touched.email && formik.errors.email 
+                                    ? <div className="form__error">
+                                        {formik.errors.email} 
+                                    </div>
+                                    : null
+                                }
                             </div>
 
                             <div className="form__row">
@@ -74,12 +105,17 @@ export default function Register() {
                                     <input
                                         type="password"
                                         className="field"
-                                        name={FormKeys.Password}
                                         id="password"
-                                        onChange={onChange}
-                                        value={formValues[FormKeys.Password]}
+                                        {...formik.getFieldProps('password')}
                                     />
                                 </div>
+
+                                {formik.touched.password && formik.errors.password 
+                                    ? <div className="form__error">
+                                        {formik.errors.password} 
+                                    </div>
+                                    : null
+                                }
                             </div>
 
                             <div className="form__row">
@@ -89,20 +125,19 @@ export default function Register() {
                                     <input
                                         type="password"
                                         className="field"
-                                        name={FormKeys.ConfirmPassword}
                                         id="confirm-password"
-                                        onChange={onChange}
-                                        value={formValues[FormKeys.ConfirmPassword]}
+                                        {...formik.getFieldProps('confirmPassword')}
                                     />
                                 </div>
+
+                                {formik.touched.confirmPassword && formik.errors.confirmPassword 
+                                    ? <div className="form__error">
+                                        {formik.errors.confirmPassword} 
+                                    </div>
+                                    : null
+                                }
                             </div>
                         </div>
-
-                        {error &&
-                            <div className="form__errors">
-                                <p>{error}</p>
-                            </div>
-                        }
 
                         <div className="form__actions">
                             <button className="btn secondary" type="submit" value="Submit">Submit</button>
