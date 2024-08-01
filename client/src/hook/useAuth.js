@@ -9,11 +9,11 @@ export const useLogin = () => {
             const {password: _, ...authData} = await login(email, password)
 
             changeAuthState(authData)
+            return 'success';
         } catch (err) {
-            console.log(err.message)
+            return err.message;
         }
     }
-
     return loginHandler;
 }
 

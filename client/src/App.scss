@@ -555,10 +555,18 @@ blockquote:last-child {
     .form__row {
         max-width: 100%;
         flex: 0 0 100%;
-        padding: 0.4rem;
+        padding: .4rem .4rem 2.4rem;
+        position: relative;
 
         &:not(:last-child) {
             margin-bottom: 0.8rem;
+        }
+
+        .form__error {
+            position: absolute;
+            right: .4rem;
+            bottom: 0;
+            margin-bottom: 0;
         }
     }
 
@@ -576,9 +584,11 @@ blockquote:last-child {
         flex: 0 0 50%;
     }
 
-    .form__errors {
+    .form__error {
         margin-bottom: 3.2rem;
         color: #ff2c2c;
+        padding-top: .4rem;
+        font-size: 1.4rem;
     }
 
     .form__actions {

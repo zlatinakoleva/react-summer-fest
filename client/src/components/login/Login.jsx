@@ -1,32 +1,35 @@
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../hook/useAuth";
-import useForm from "../../hook/useForm";
-
-const FormKeys = {
-    Email: 'email', 
-    Password: 'password'
-}
+import { useFormik } from "formik";
+import * as Yup from 'yup'
 
 const initialValues = {
-    [FormKeys.Email]: '',
-    [FormKeys.Password]: ''
+    email: '',
+    password: ''
 }
+
+const validSchema = Yup.object({
+    email: Yup.string().email('Invalid email address').required('Required'),
+    password: Yup.string().required('Required')
+})
 
 
 export default function Login() {
     const login = useLogin();
     const navigate = useNavigate();
 
-    const loginHandler = async (formValues) => {
-        try {
-            await login(formValues.email, formValues.password);
-            navigate(-1);
-        } catch (err) {
-            console.log(err.message);
+    const formik = useFormik({
+        initialValues: initialValues,
+        validationSchema: validSchema,
+        onSubmit: async (values, {setErrors}) => {
+            const loginResult = await login(values.email, values.password);
+            if (loginResult == 'success') {
+                navigate(-1);
+            } else {
+                setErrors({server: `${loginResult}`})
+            }
         }
-    };
-
-    const { formValues, onChange, onSubmit } = useForm(loginHandler, initialValues);
+    })
 
     return (
         <div className="popup">
@@ -37,9 +40,15 @@ export default function Login() {
                 </div>
 
                 <div className="form">
-                    <form onSubmit={onSubmit}>
+                    <form onSubmit={formik.handleSubmit}>
                         <div className="form__head">
                             <h2>Login</h2>
+
+                            {formik.errors.server &&
+                                <div className="form__error">
+                                    {formik.errors.server}
+                                </div>
+                            }
                         </div>
 
                         <div className="form__body">
@@ -49,14 +58,18 @@ export default function Login() {
                                 <div className="form__controls">
                                     <input
                                         type="email"
-                                        className="field"
-                                        name={FormKeys.Email}
                                         id="email"
-                                        onChange={onChange}
-                                        value={formValues[FormKeys.Email]}
-                                        placeholder="john_smith@gmail.com"
+                                        className="field"
+                                        {...formik.getFieldProps('email')}
                                     />
                                 </div>
+
+                                {formik.touched.email && formik.errors.email 
+                                    ? <div className="form__error">
+                                        {formik.errors.email} 
+                                    </div>
+                                    : null
+                                }
                             </div>
 
                             <div className="form__row">
@@ -66,17 +79,22 @@ export default function Login() {
                                     <input
                                         type="password"
                                         className="field"
-                                        name={FormKeys.Password}
                                         id="password"
-                                        onChange={onChange}
-                                        value={formValues[FormKeys.Password]}
+                                        {...formik.getFieldProps('password')}
                                     />
                                 </div>
+
+                                {formik.touched.password && formik.errors.password 
+                                    ? <div className="form__error">
+                                        {formik.errors.password} 
+                                    </div>
+                                    : null
+                                }
                             </div>
                         </div>
-
+                        
                         <div className="form__actions">
-                            <button className="btn secondary" type="submit" value="Submit">Submit</button>
+                            <button className="btn secondary" type="submit" disabled={formik.isSubmitting}>Submit</button>
                         </div>
                     </form>
                 </div>

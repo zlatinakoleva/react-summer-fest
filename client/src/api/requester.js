@@ -14,8 +14,6 @@ const buildOptions = (data) => {
     const token = getAccessToken();
     const userType = getUserType();
 
-    console.log(token)
-
     if (token) {
         options.headers = {
             ...options.headers,

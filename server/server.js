@@ -1672,6 +1672,28 @@
                         ]
                     }
                 ]
+            },
+            "c5d9f4e2-7c6b-4f15-87d4-7b86579efb4d": {
+                "name": "Rihanna",
+                "id": "c5d9f4e2-7c6b-4f15-87d4-7b86579efb4d",
+                "image": "/public/images/temp/rihanna.png",
+                "details": [
+                    {
+                        "bio": "Rihanna, born Robyn Rihanna Fenty on February 20, 1988, in Saint Michael, Barbados, is a globally renowned singer, songwriter, and entrepreneur. She gained international fame with her debut album, *Music of the Sun* (2005), and has since become a major force in music with hits like 'Umbrella' and 'We Found Love.' Known for her distinctive voice and fashion sense, Rihanna has won multiple Grammy Awards and is also recognized for her successful ventures in fashion and beauty, including her Fenty Beauty line.",
+                        "songs": [
+                            "Umbrella",
+                            "We Found Love",
+                            "Diamonds",
+                            "Rude Boy",
+                            "Only Girl (In The World)",
+                            "Work",
+                            "Don't Stop the Music",
+                            "Where Have You Been",
+                            "Stay",
+                            "S&M"
+                        ]
+                    }
+                ]
             }     
     },
     	recipes: {
