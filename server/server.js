@@ -1330,6 +1330,13 @@
                 status: "user_admin",
     			username: "Admin",
     			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
+    		},
+            "916887d9-4673-4b13-8526-05a52cf6add9": {
+    			email: "johndoe@abv.bg",
+                status: "user_logged",
+    			username: "John Doe",
+                password: "123",
+    			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa303"
     		}
     	},
     	sessions: {
@@ -1750,14 +1757,84 @@
     		}
     	},
     	comments: {
-    		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			commentData: "I love Bad Romance",
-    			singerId: "3987279d-0ad4-4afb-8ca9-5b256ae3b298",
-    			_createdOn: 1614260681375,
-    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-    		}
-    	},
+            "0a272c58-b7ea-4e09-a000-7ec988248f66": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                content: "I love Bad Romance",
+                _singerId: "3987279d-0ad4-4afb-8ca9-5b256ae3b298",
+                _createdOn: 1614260681375,
+                _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
+            },
+            "e1f4bb32-5a43-48ea-8fb4-27ba9a3ae731": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "3987279d-0ad4-4afb-8ca9-5b256ae3b298",
+                content: "Poker Face\n",
+                _createdOn: 1722604026579,
+                _id: "e1f4bb32-5a43-48ea-8fb4-27ba9a3ae731"
+            },
+            "ecd9e19d-7594-49e2-a8b2-ec522e28d70f": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "f3d7bc9a-98d1-4d23-9c9e-dcd1f4f5b244",
+                content: "Just Give Me a Reason\n",
+                _createdOn: 1722604052264,
+                _id: "ecd9e19d-7594-49e2-a8b2-ec522e28d70f"
+            },
+            "e73caf9a-c6a2-41fb-bdc1-6b2cf3210de4": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "e21b0c3a-d223-46f4-b80c-85e2b1b8d09b",
+                content: "She Wolf\n",
+                _createdOn: 1722604060482,
+                _id: "e73caf9a-c6a2-41fb-bdc1-6b2cf3210de4"
+            },
+            "fe801aad-3e1f-4f49-9d14-3338925b376d": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "a7d99b6d-1b3e-4d9e-9e4a-f5a2b728d82b",
+                content: "Burlesque",
+                _createdOn: 1722604070536,
+                _id: "fe801aad-3e1f-4f49-9d14-3338925b376d"
+            },
+            "353a9e2d-8040-4c70-bc50-9a26b6490ed8": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "a7d99b6d-1b3e-4d9e-9e4a-f5a2b728d82b",
+                content: "What a Girl Wants\n",
+                _createdOn: 1722604077202,
+                _id: "353a9e2d-8040-4c70-bc50-9a26b6490ed8"
+            },
+            "9857294e-2216-4a44-b6dd-d857301facda": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "b2e2f61c-4b7e-46a5-a892-f9e5c5104de4",
+                content: "Sicko Mode\n",
+                _createdOn: 1722604086045,
+                _id: "9857294e-2216-4a44-b6dd-d857301facda"
+            },
+            "1bd83aa2-b680-4e0e-a047-385492147fb8": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "ab3a2c0c-8b6a-4d3f-bdd3-07d688639fc0",
+                content: "Drunk in Love\n",
+                _createdOn: 1722604098793,
+                _id: "1bd83aa2-b680-4e0e-a047-385492147fb8"
+            },
+            "826fd7a7-7020-4b81-aab5-9374d3c25fa6": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "c5d9f4e2-7c6b-4f15-87d4-7b86579efb4d",
+                content: "Don't Stop the Music\n",
+                _createdOn: 1722604109328,
+                _id: "826fd7a7-7020-4b81-aab5-9374d3c25fa6"
+            },
+            "189621a5-e62e-4d43-adb1-471319532373": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "db2eafc3-01dc-4cbf-9c62-33e4edb2bba7",
+                content: "That's What I Like\n",
+                _createdOn: 1722604139433,
+                _id: "189621a5-e62e-4d43-adb1-471319532373"
+            },
+            "5912d251-2272-466c-92d5-6a93833d63bd": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "edb98b23-4f2f-4b68-bb5d-3d6c062d1b23",
+                content: "We Can't Stop\n",
+                _createdOn: 1722604149182,
+                _id: "5912d251-2272-466c-92d5-6a93833d63bd"
+            }
+        },
     	records: {
     		i01: {
     			name: "John1",

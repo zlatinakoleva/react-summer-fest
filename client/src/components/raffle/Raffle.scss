@@ -1,0 +1,89 @@
+/* ------------------------------------------------------------ *\
+    Raffle
+\* ------------------------------------------------------------ */
+
+.section-raffle {
+    padding: 20rem 0;
+
+    .section__inner {
+        max-width: 120rem;
+        margin: 0 auto;
+    }
+
+    .section__head {
+        margin: 0 auto 7rem;
+        text-align: center;
+    }
+
+    .section__comments {
+        margin: 0 auto;
+    }
+
+    .section__raffle {
+        margin-bottom: 6.4rem;
+    }
+
+    .grid {
+        margin: -1.6rem;
+        .grid__col {
+            padding: 1.6rem;
+        }
+    }
+}
+
+/* ------------------------------------------------------------ *\
+    raffle-container
+\* ------------------------------------------------------------ */
+
+.raffle {
+    .raffle__content {
+        display: block;
+        width: 100%;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--blue-200);
+        margin-bottom: 2.4rem;
+        border-radius: var(--box-radius-l);
+    }
+
+    .raffle__button {
+        margin-bottom: 4rem;
+        span + span {
+            display: none;
+        }
+        .btn.active {
+            display: none;
+            background-color: var(--primary);
+
+            span + span {
+                display: block;
+            }
+        }
+    }
+
+    .raffle__list {
+        h4 {
+            margin-bottom: 3.2rem;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: -.4rem;
+        }
+
+        li {
+            padding: .4rem;
+        }
+
+        span {
+            padding: 1rem 2rem;
+            border: .1rem solid var(--blue-100);
+            border-radius: 20rem;
+        }
+    }
+}

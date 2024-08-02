@@ -37,7 +37,7 @@ export function useGetOneSingerComments(singerId) {
 }
 
 export function useAddComment() {
-    const addComment = (commentData, singerId, authorUsername) => commentsAPI.create(commentData,singerId,authorUsername);
+    const addComment = (content, singerId, authorUsername) => commentsAPI.create(content,singerId,authorUsername);
     
     return addComment;
 }

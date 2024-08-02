@@ -15,6 +15,7 @@ import CreateMerchItem from './components/merch/create-merch-item/CreateMerchIte
 import Logout from './components/logout/Logout';
 import EditMerchItem from './components/merch/edit-merch-item/EditMerchItem';
 import SingerDetails from './components/singer-details/Singer-Details';
+import Raffle from './components/raffle/Raffle';
 
 function App() {
     const location = useLocation();
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/merch" element={<Merch />}/>
                     <Route path="/logout" element={<Logout />}/>
+                    <Route path="/Raffle" element={<Raffle />}/>
                     <Route path="/about/singers/:singerName/:singerId" element={<SingerDetails />}/>
                 </Routes>
                 { background && (

@@ -26,7 +26,7 @@ export default function Comments() {
         initialValues: initialValues,
         validationSchema: validSchema,
         onSubmit: async (formValues) => {
-            console.log(name)
+            console.log(singerId)
             const response = await addComment(formValues.content, singerId, name)
             console.log(response)
 
@@ -93,7 +93,7 @@ export default function Comments() {
                                                                         <h5>{comment.author?.username}</h5>
                                                                         <small>{formaDate(comment._createdOn)}</small>
                                                                     </div>
-                                                                    <p>{comment.commentData}</p>
+                                                                    <p>{comment.content}</p>
                                                                 </div>
                                                             </li>
                                                         ))}

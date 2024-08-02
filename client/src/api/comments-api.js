@@ -2,14 +2,17 @@ import * as request from '../api/requester';
 const baseUrl = 'http://localhost:3030/data/comments'
 
 export const getAll = async () => {
-    const result = await request.get(baseUrl);
+    const params = new URLSearchParams({
+        load: `author=_ownerId:users,singer=_singerId:singers`,
+    })
+    const result = await request.get(`${baseUrl}?${params.toString()}`);
 
     return result;
 };
 
 export const getForOneSinger = async (singerId) => {
     const params = new URLSearchParams({
-        where: `singerId="${singerId}"`,
+        where: `_singerId="${singerId}"`,
         load: `author=_ownerId:users`
     })
     const result = await request.get(`${baseUrl}?${params.toString()}`);
@@ -23,10 +26,10 @@ export const edit = async (commentData) => {
     return result;
 };
 
-export const create = async (commentData, singerId, authorUsername) => {
+export const create = async (content, singerId, authorUsername) => {
     const result = await request.post(baseUrl, {
-        singerId,
-        commentData,
+        _singerId: singerId,
+        content,
         author: {
             username: authorUsername
         }
