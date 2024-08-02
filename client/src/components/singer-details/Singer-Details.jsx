@@ -4,11 +4,10 @@ import Comments from './comments/Comments'
 import { useGetOneSinger } from '../../hook/useSingers'
 
 export default function SingerDetails() {
-    const { singerName, singerID } = useParams();
-    const [singer, setSinger] = useGetOneSinger(singerID)
+    const { singerName, singerId } = useParams();
+    const [singer, setSinger] = useGetOneSinger(singerId)
 
     if (!singer || !singer.details ) {
-        console.log('1')
         return;
     }
 

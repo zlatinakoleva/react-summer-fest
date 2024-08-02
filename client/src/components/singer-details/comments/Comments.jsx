@@ -1,6 +1,39 @@
 import './Comments.scss'
+import { Link, useParams } from 'react-router-dom'
+import { useAddComment, useGetOneSingerComments } from '../../../hook/useComments';
+import { formaDate } from '../../../utils/formatDate';
+import { useAuthContext } from '../../../contexts/authContext';
+import { useLocation } from 'react-router-dom';
+import { useFormik } from "formik";
+import * as Yup from 'yup'
+
+const initialValues = {
+    content: ''
+}
+
+const validSchema = Yup.object({
+    comment: Yup.string().min(3, 'Comment must be ate least 3 characters long'),
+})
 
 export default function Comments() {
+    const { singerId }  = useParams();
+    const location = useLocation();
+    const [comments, setComments] = useGetOneSingerComments(singerId);
+    const {userType, name } = useAuthContext();
+    const addComment = useAddComment();
+
+    const formik = useFormik({
+        initialValues: initialValues,
+        validationSchema: validSchema,
+        onSubmit: async (formValues) => {
+            console.log(name)
+            const response = await addComment(formValues.content, singerId, name)
+            console.log(response)
+
+            setComments(oldState=> [response, ...oldState])
+        }
+    })
+
     return (
         <>
             <section className="section-comments">
@@ -16,77 +49,60 @@ export default function Comments() {
                                     <div className="section__form">
                                         <div className="form form--alt">
                                             <div className="form__head">
-                                                <h4>Leave Comment</h4>
+                                                <h3>Leave Comment</h3>
                                             </div>
-
+                                            
                                             <div className="form__body">
-                                                <form>
-                                                    <div className="form__row">
-                                                        <label htmlFor="email" className="form__label">Comment</label>
-                                                        
-                                                        <div className="form__controls">
-                                                            <textarea name="comment" id="" placeholder="My favorite song is..."></textarea>
+                                                {userType != 'user_not_logged' 
+                                                    ? <form onSubmit={formik.handleSubmit} className={userType == "user_admin" ? "disabled-admin" : ""}>
+                                                        <div className="form__row">
+                                                            <label htmlFor="content" className="form__label">Comment</label>
+                                                            
+                                                            <div className="form__controls">
+                                                                <textarea
+                                                                    {...formik.getFieldProps('content')}
+                                                                    placeholder={userType == "user_admin" ? "Admins not allowed to leave comments" : "My favorite song is..."}
+                                                                />
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div className="form__actions">
-                                                        <button className="btn secondary" type="submit" value="Submit">Submit</button>
-                                                    </div>
-                                                </form>
+                                                        <div className="form__actions">
+                                                            <button className="btn secondary" type="submit" value="Submit">Submit</button>
+                                                        </div>
+                                                    </form>
+                                                    :<>
+                                                        <h4>Ooop, looks like you are not logged &#128577;</h4>
+                                                        <p>
+                                                            <Link to="/login" className="link" state={{ background: location }}>
+                                                                Login
+                                                            </Link> or <Link to="/login" className="link"  state={{ background: location }}>
+                                                                Register
+                                                            </Link> to leave comment
+                                                        </p>
+                                                    </>
+                                                }
                                             </div>
 
                                             <div className="form__list">
-                                                <ul className="list-comments">
-                                                    <li>
-                                                        <div className="comment">
-                                                            <div className="comment__head">
-                                                                <h5>John Smith</h5>
-                                                                <small>August 01, 2024</small>
-                                                            </div>
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, magni?</p>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div className="comment">
-                                                            <div className="comment__head">
-                                                                <h5>John Smith</h5>
-                                                                <small>August 01, 2024</small>
-                                                            </div>
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, magni?</p>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div className="comment">
-                                                            <div className="comment__head">
-                                                                <h5>John Smith</h5>
-                                                                <small>August 01, 2024</small>
-                                                            </div>
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, magni?</p>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div className="comment">
-                                                            <div className="comment__head">
-                                                                <h5>John Smith</h5>
-                                                                <small>August 01, 2024</small>
-                                                            </div>
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, magni?</p>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div className="comment">
-                                                            <div className="comment__head">
-                                                                <h5>John Smith</h5>
-                                                                <small>August 01, 2024</small>
-                                                            </div>
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, magni?</p>
-                                                        </div>
-                                                    </li>
-                                                </ul>
+                                                {comments.length > 0
+                                                    ? <ul className="list-comments">
+                                                        {comments.map(comment => (
+                                                            <li key={comment._id}>
+                                                                <div className="comment">
+                                                                    <div className="comment__head">
+                                                                        <h5>{comment.author?.username}</h5>
+                                                                        <small>{formaDate(comment._createdOn)}</small>
+                                                                    </div>
+                                                                    <p>{comment.commentData}</p>
+                                                                </div>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                    : <>
+                                                        <h4>No Comments Yet</h4>
+                                                        <p>Be the first :)</p>
+                                                    </>
+                                                }
                                             </div>
                                         </div>
                                     </div>

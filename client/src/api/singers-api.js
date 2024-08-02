@@ -7,14 +7,14 @@ export const getAll = async () => {
     return result;
 };
 
-export const getOne = async (singerID) => {
-    const result = await request.get(`${baseUrl}/${singerID}`);
+export const getOne = async (singerId) => {
+    const result = await request.get(`${baseUrl}/${singerId}`);
 
     return result;
 };
 
-export const edit = async (singerData, singerID) => {
-    const result = await request.patch(`${baseUrl}/${singerID}`, singerData);
+export const edit = async (singerData, singerId) => {
+    const result = await request.patch(`${baseUrl}/${singerId}`, singerData);
     return result;
 };
 
@@ -25,5 +25,5 @@ export const create = async (singerData) => {
 };
 
 
-export const remove = async (singerID) => request.remove(`${baseUrl}/${singerID}`);
+export const remove = async (singerId) => request.remove(`${baseUrl}/${singerId}`);
 

@@ -31,7 +31,7 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/merch" element={<Merch />}/>
                     <Route path="/logout" element={<Logout />}/>
-                    <Route path="/about/singers/:singerName/:singerID" element={<SingerDetails />}/>
+                    <Route path="/about/singers/:singerName/:singerId" element={<SingerDetails />}/>
                 </Routes>
                 { background && (
                     <Routes>

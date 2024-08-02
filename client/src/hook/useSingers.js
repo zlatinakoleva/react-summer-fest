@@ -19,19 +19,19 @@ export function useGetAllSingers() {
     return [singers, setSingers];    
 }
 
-export function useGetOneSinger(singerID) {
+export function useGetOneSinger(singerId) {
     const [singer, setSinger] = useState([]);
 
     useEffect(() => {
         (async()=>{
             try {
-                const result = await singersAPI.getOne(singerID);
+                const result = await singersAPI.getOne(singerId);
                 setSinger(result);
             } catch (err) {
                 console.log(err);
             }
         })();
-    },[singerID])
+    },[singerId])
 
     return [singer, setSinger];    
 }
