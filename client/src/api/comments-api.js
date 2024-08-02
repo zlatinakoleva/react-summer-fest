@@ -35,7 +35,6 @@ export const create = async (content, singerId, authorUsername) => {
         }
     });
 
-    console.log(result)
     return result;
 };
 

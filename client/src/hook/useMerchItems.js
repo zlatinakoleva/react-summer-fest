@@ -17,7 +17,7 @@ function reducer(state, action) {
     }
 }
 
-export function useGetAllMerchItems() {
+export function useGetAllMerchItems(pageKey) {
     const [merchItems, dispatch] = useReducer(reducer,[]); 
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export function useGetAllMerchItems() {
                 console.log(err);
             }
         })();
-    }, []);
+    }, [pageKey]);
 
     return [merchItems, dispatch]
 }

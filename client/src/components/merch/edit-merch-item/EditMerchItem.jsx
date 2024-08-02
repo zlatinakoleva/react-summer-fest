@@ -16,7 +16,7 @@ export default function EditMerchItem() {
         try {
             const updatedMerchItem = await editMerchItem(formValues, merchItemID)
             dispatch({type: 'EDIT_ITEM', payload: updatedMerchItem})
-            navigate(-1)
+            navigate('/merch')
         } catch (err) {
             console.log(err.message);
         }

@@ -26,9 +26,7 @@ export default function Comments() {
         initialValues: initialValues,
         validationSchema: validSchema,
         onSubmit: async (formValues) => {
-            console.log(singerId)
             const response = await addComment(formValues.content, singerId, name)
-            console.log(response)
 
             setComments(oldState=> [response, ...oldState])
         }

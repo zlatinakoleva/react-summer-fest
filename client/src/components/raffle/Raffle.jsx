@@ -9,8 +9,6 @@ export default function Raffle() {
         return;
     }
 
-    console.log(comments)
-
     return (
         <>
             <section className="section-raffle">
