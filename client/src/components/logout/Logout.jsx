@@ -7,7 +7,7 @@ export default function Logout() {
     const performLogout = useLogout();
     useEffect(()=>{
         performLogout()
-        navigate(-1)
+        navigate('/')
     },[])
     return (<></>)
 }
