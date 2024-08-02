@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import useForm from '../../../hook/useForm';
 import { useEditMerchItem, useGetAllMerchItems } from '../../../hook/useMerchItems';
 import { useGetOneMerchItem } from "../../../hook/useMerchItems";
-import { useEffect } from "react";
 
 
 export default function EditMerchItem() {

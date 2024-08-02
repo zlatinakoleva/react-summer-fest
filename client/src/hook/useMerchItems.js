@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import * as merchAPI from  '../api/merch-api';
 
 function reducer(state, action) {
@@ -37,7 +37,7 @@ export function useGetAllMerchItems() {
 }
 
 export function useGetOneMerchItem(merchItemID) {
-    const [merchItem, setMerchItem] = ({
+    const [merchItem, setMerchItem] = useState({
         title: '',
         description: '',
         image: ''
