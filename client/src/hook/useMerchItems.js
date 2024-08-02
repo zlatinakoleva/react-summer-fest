@@ -4,7 +4,6 @@ import * as merchAPI from  '../api/merch-api';
 function reducer(state, action) {
     switch (action.type) {
         case 'GET_ALL':
-            console.log('ini load')
             return action.payload;
         case 'EDIT_ITEM':
             return {
@@ -12,7 +11,6 @@ function reducer(state, action) {
                 "item": action.payload
             };
         case 'ADD_ITEM':
-            console.log('add item')
             return [...state, action.payload];
         default:
             return state;

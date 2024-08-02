@@ -1389,13 +1389,13 @@
         },
         singers: {
             "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-                "name": "Lady Gaga",
-                "id": "3987279d-0ad4-4afb-8ca9-5b256ae3b298",
-                "image": "/public/images/temp/lady-gaga.png",
-                "details": [ 
+                name: "Lady Gaga",
+                _id: "3987279d-0ad4-4afb-8ca9-5b256ae3b298",
+                image: "/public/images/temp/lady-gaga.png",
+                details: [ 
                     {
-                        "bio": "Lady Gaga, born Stefani Joanne Angelina Germanotta on March 28, 1986, in New York City, is a globally acclaimed singer, songwriter, and actress. Known for her flamboyant fashion and powerful vocals, Gaga gained fame with her debut album, The Fame (2008), which included hits like 'Just Dance' and 'Poker Face.' She has won numerous awards, including 13 Grammys, and is celebrated for her versatility across music genres. Gaga also starred in the critically acclaimed film A Star Is Born (2018), earning an Oscar for Best Original Song for 'Shallow.' Her influence extends beyond music, advocating for mental health and LGBTQ+ rights.",
-                        "songs": [
+                        bio: "Lady Gaga, born Stefani Joanne Angelina Germanotta on March 28, 1986, in New York City, is a globally acclaimed singer, songwriter, and actress. Known for her flamboyant fashion and powerful vocals, Gaga gained fame with her debut album, The Fame (2008), which included hits like 'Just Dance' and 'Poker Face.' She has won numerous awards, including 13 Grammys, and is celebrated for her versatility across music genres. Gaga also starred in the critically acclaimed film A Star Is Born (2018), earning an Oscar for Best Original Song for 'Shallow.' Her influence extends beyond music, advocating for mental health and LGBTQ+ rights.",
+                        songs: [
                             "Bad Romance",
                             "Poker Face", 
                             "Just Dance - (feat. Colby O'Donis)" , 
@@ -1410,13 +1410,13 @@
                 ]
             },
             "f3d7bc9a-98d1-4d23-9c9e-dcd1f4f5b244": {
-                "name": "Pink",
-                "id": "f3d7bc9a-98d1-4d23-9c9e-dcd1f4f5b244",
-                "image": "/public/images/temp/pink.png",
-                "details": [
+                name: "Pink",
+                _id: "f3d7bc9a-98d1-4d23-9c9e-dcd1f4f5b244",
+                image: "/public/images/temp/pink.png",
+                details: [
                     {
-                        "bio": "Pink, born Alecia Beth Moore on September 8, 1979, in Doylestown, Pennsylvania, is an acclaimed American singer and songwriter known for her powerful voice and dynamic performances. She gained fame with her debut album, *Can't Take Me Home* (2000), and has since released multiple chart-topping albums. Pink is celebrated for her blend of pop and rock music and her hit singles such as 'Just Give Me a Reason' and 'So What.' Over her career, she has won multiple Grammy Awards and is known for her advocacy on various social issues.",
-                        "songs": [
+                        bio: "Pink, born Alecia Beth Moore on September 8, 1979, in Doylestown, Pennsylvania, is an acclaimed American singer and songwriter known for her powerful voice and dynamic performances. She gained fame with her debut album, *Can't Take Me Home* (2000), and has since released multiple chart-topping albums. Pink is celebrated for her blend of pop and rock music and her hit singles such as 'Just Give Me a Reason' and 'So What.' Over her career, she has won multiple Grammy Awards and is known for her advocacy on various social issues.",
+                        songs: [
                             "Just Give Me a Reason",
                             "So What",
                             "Just Like a Pill",
@@ -1432,13 +1432,13 @@
                 ]
             },
             "e21b0c3a-d223-46f4-b80c-85e2b1b8d09b": {
-                "name": "Shakira",
-                "id": "e21b0c3a-d223-46f4-b80c-85e2b1b8d09b",
-                "image": "/public/images/temp/shakira.png",
-                "details": [
+                name: "Shakira",
+                _id: "e21b0c3a-d223-46f4-b80c-85e2b1b8d09b",
+                image: "/public/images/temp/shakira.png",
+                details: [
                     {
-                        "bio": "Shakira, born Shakira Isabel Mebarak Ripoll on February 2, 1977, in Barranquilla, Colombia, is a renowned Colombian singer, songwriter, and dancer. She gained international fame with her unique blend of Latin, Arabic, and pop music. Her breakthrough album, *Laundry Service* (2001), featured hits like 'Whenever, Wherever.' Shakira is celebrated for her energetic performances and has won multiple Grammy Awards. She is also known for her philanthropic work and advocacy for children's education.",
-                        "songs": [
+                        bio: "Shakira, born Shakira Isabel Mebarak Ripoll on February 2, 1977, in Barranquilla, Colombia, is a renowned Colombian singer, songwriter, and dancer. She gained international fame with her unique blend of Latin, Arabic, and pop music. Her breakthrough album, *Laundry Service* (2001), featured hits like 'Whenever, Wherever.' Shakira is celebrated for her energetic performances and has won multiple Grammy Awards. She is also known for her philanthropic work and advocacy for children's education.",
+                        songs: [
                             "Hips Don't Lie",
                             "Whenever, Wherever",
                             "Waka Waka (This Time for Africa)",
@@ -1454,13 +1454,13 @@
                 ]
             },
             "d9f5b9c4-0f5c-4d44-a989-b8b7faad6b2f": {
-                "name": "Pitbull",
-                "id": "d9f5b9c4-0f5c-4d44-a989-b8b7faad6b2f",
-                "image": "/public/images/temp/pitbull.png",
-                "details": [
+                name: "Pitbull",
+                _id: "d9f5b9c4-0f5c-4d44-a989-b8b7faad6b2f",
+                image: "/public/images/temp/pitbull.png",
+                details: [
                     {
-                        "bio": "Pitbull, born Armando Christian Pérez on January 15, 1981, in Miami, Florida, is an American rapper, singer, and songwriter known for his energetic and catchy tracks. He rose to prominence with his debut album, *M.I.A.M.I.* (2004), and has since become a global icon. Pitbull is famous for his party anthems and collaborations with artists across various genres. His hit singles include 'Give Me Everything' and 'Timber,' showcasing his signature blend of reggaeton, dance, and pop.",
-                        "songs": [
+                        bio: "Pitbull, born Armando Christian Pérez on January 15, 1981, in Miami, Florida, is an American rapper, singer, and songwriter known for his energetic and catchy tracks. He rose to prominence with his debut album, *M.I.A.M.I.* (2004), and has since become a global icon. Pitbull is famous for his party anthems and collaborations with artists across various genres. His hit singles include 'Give Me Everything' and 'Timber,' showcasing his signature blend of reggaeton, dance, and pop.",
+                        songs: [
                             "Give Me Everything",
                             "Timber",
                             "I Know You Want Me (Calle Ocho)",
@@ -1476,13 +1476,13 @@
                 ]
             },
             "1d9d6c8e-5c6e-4b68-b26b-13ae3f24a2f0": {
-                "name": "Jennifer Lopez",
-                "id": "1d9d6c8e-5c6e-4b68-b26b-13ae3f24a2f0",
-                "image": "/public/images/temp/jennifer lopez.png",
-                "details": [
+                name: "Jennifer Lopez",
+                _id: "1d9d6c8e-5c6e-4b68-b26b-13ae3f24a2f0",
+                image: "/public/images/temp/jennifer-lopez.png",
+                details: [
                     {
-                        "bio": "Jennifer Lopez, born Jennifer Lynn Lopez on July 24, 1969, in The Bronx, New York, is a multifaceted American singer, actress, and dancer. Rising to fame in the late 1990s, Lopez has established herself as one of the most influential Latin artists. Her debut album, *On the 6* (1999), included hits like 'If You Had My Love.' Lopez is celebrated for her contributions to both music and film, and has won numerous awards including Grammy nominations and a Golden Globe.",
-                        "songs": [
+                        bio: "Jennifer Lopez, born Jennifer Lynn Lopez on July 24, 1969, in The Bronx, New York, is a multifaceted American singer, actress, and dancer. Rising to fame in the late 1990s, Lopez has established herself as one of the most influential Latin artists. Her debut album, *On the 6* (1999), included hits like 'If You Had My Love.' Lopez is celebrated for her contributions to both music and film, and has won numerous awards including Grammy nominations and a Golden Globe.",
+                        songs: [
                             "On the Floor",
                             "If You Had My Love",
                             "Jenny from the Block",
@@ -1498,13 +1498,13 @@
                 ]
             },
             "2a1e5f4e-87d4-4b7f-ae40-989d06546a57": {
-                "name": "Eminem",
-                "id": "2a1e5f4e-87d4-4b7f-ae40-989d06546a57",
-                "image": "/public/images/temp/eminem.png",
-                "details": [
+                name: "Eminem",
+                _id: "2a1e5f4e-87d4-4b7f-ae40-989d06546a57",
+                image: "/public/images/temp/eminem.png",
+                details: [
                     {
-                        "bio": "Eminem, born Marshall Bruce Mathers III on October 17, 1972, in St. Joseph, Missouri, is an American rapper, songwriter, and record producer. Known for his intricate lyrics and controversial themes, Eminem emerged as a prominent figure in the late 1990s with his debut album, *The Slim Shady LP* (1999). He has won numerous awards, including 15 Grammys and an Academy Award for Best Original Song. Eminem's influence extends across the hip-hop genre and popular culture.",
-                        "songs": [
+                        bio: "Eminem, born Marshall Bruce Mathers III on October 17, 1972, in St. Joseph, Missouri, is an American rapper, songwriter, and record producer. Known for his intricate lyrics and controversial themes, Eminem emerged as a prominent figure in the late 1990s with his debut album, *The Slim Shady LP* (1999). He has won numerous awards, including 15 Grammys and an Academy Award for Best Original Song. Eminem's influence extends across the hip-hop genre and popular culture.",
+                        songs: [
                             "Lose Yourself",
                             "Stan",
                             "Without Me",
@@ -1520,13 +1520,13 @@
                 ]
             },
             "b2e2f61c-4b7e-46a5-a892-f9e5c5104de4": {
-                "name": "Drake",
-                "id": "b2e2f61c-4b7e-46a5-a892-f9e5c5104de4",
-                "image": "/public/images/temp/drake.png",
-                "details": [
+                name: "Drake",
+                _id: "b2e2f61c-4b7e-46a5-a892-f9e5c5104de4",
+                image: "/public/images/temp/drake.png",
+                details: [
                     {
-                        "bio": "Drake, born Aubrey Drake Graham on October 24, 1986, in Toronto, Canada, is a highly influential rapper, singer, and songwriter. Rising to fame with his mixtapes and debut album, *Thank Me Later* (2010), Drake is known for his blend of rap and R&B. He has set numerous streaming records and won several Grammy Awards. His versatile style and lyrical content have made him one of the most prominent figures in contemporary music.",
-                        "songs": [
+                        bio: "Drake, born Aubrey Drake Graham on October 24, 1986, in Toronto, Canada, is a highly influential rapper, singer, and songwriter. Rising to fame with his mixtapes and debut album, *Thank Me Later* (2010), Drake is known for his blend of rap and R&B. He has set numerous streaming records and won several Grammy Awards. His versatile style and lyrical content have made him one of the most prominent figures in contemporary music.",
+                        songs: [
                             "Hotline Bling",
                             "God's Plan",
                             "In My Feelings",
@@ -1542,13 +1542,13 @@
                 ]
             },
             "a7d99b6d-1b3e-4d9e-9e4a-f5a2b728d82b": {
-                "name": "Christina Aguilera",
-                "id": "a7d99b6d-1b3e-4d9e-9e4a-f5a2b728d82b",
-                "image": "/public/images/temp/cristina-aguilera.png",
-                "details": [
+                name: "Christina Aguilera",
+                _id: "a7d99b6d-1b3e-4d9e-9e4a-f5a2b728d82b",
+                image: "/public/images/temp/christina-aguilera.png",
+                details: [
                     {
-                        "bio": "Christina Aguilera, born Christina María Aguilera on December 18, 1980, in Staten Island, New York, is a renowned American singer, songwriter, and television personality. She gained fame with her debut self-titled album in 1999, featuring hits like 'Genie in a Bottle.' Aguilera is known for her powerful vocal range and has received multiple Grammy Awards. Her music spans pop, R&B, and soul, and she continues to be a prominent figure in the music industry.",
-                        "songs": [
+                        bio: "Christina Aguilera, born Christina María Aguilera on December 18, 1980, in Staten Island, New York, is a renowned American singer, songwriter, and television personality. She gained fame with her debut self-titled album in 1999, featuring hits like 'Genie in a Bottle.' Aguilera is known for her powerful vocal range and has received multiple Grammy Awards. Her music spans pop, R&B, and soul, and she continues to be a prominent figure in the music industry.",
+                        songs: [
                             "Genie in a Bottle",
                             "Beautiful",
                             "What a Girl Wants",
@@ -1564,13 +1564,13 @@
                 ]
             },
             "db2eafc3-01dc-4cbf-9c62-33e4edb2bba7": {
-                "name": "Bruno Mars",
-                "id": "db2eafc3-01dc-4cbf-9c62-33e4edb2bba7",
-                "image": "/public/images/temp/bruno-mars.png",
-                "details": [
+                name: "Bruno Mars",
+                _id: "db2eafc3-01dc-4cbf-9c62-33e4edb2bba7",
+                image: "/public/images/temp/bruno-mars.png",
+                details: [
                     {
-                        "bio": "Bruno Mars, born Peter Gene Hernandez on October 8, 1985, in Honolulu, Hawaii, is an American singer, songwriter, and record producer known for his eclectic music style. His debut album, *Doo-Wops & Hooligans* (2010), included hits like 'Just the Way You Are.' Mars has received multiple Grammy Awards and is praised for his soulful vocals and impressive live performances. His music blends pop, funk, soul, and R&B, making him a versatile and influential artist.",
-                        "songs": [
+                        bio: "Bruno Mars, born Peter Gene Hernandez on October 8, 1985, in Honolulu, Hawaii, is an American singer, songwriter, and record producer known for his eclectic music style. His debut album, *Doo-Wops & Hooligans* (2010), included hits like 'Just the Way You Are.' Mars has received multiple Grammy Awards and is praised for his soulful vocals and impressive live performances. His music blends pop, funk, soul, and R&B, making him a versatile and influential artist.",
+                        songs: [
                             "Uptown Funk",
                             "Just the Way You Are",
                             "Locked Out of Heaven",
@@ -1586,13 +1586,13 @@
                 ]
             },
             "ab3a2c0c-8b6a-4d3f-bdd3-07d688639fc0": {
-                "name": "Beyonce",
-                "id": "ab3a2c0c-8b6a-4d3f-bdd3-07d688639fc0",
-                "image": "/public/images/temp/beyonce.png",
-                "details": [
+                name: "Beyonce",
+                _id: "ab3a2c0c-8b6a-4d3f-bdd3-07d688639fc0",
+                image: "/public/images/temp/beyonce.png",
+                details: [
                     {
-                        "bio": "Beyoncé, born Beyoncé Giselle Knowles on September 4, 1981, in Houston, Texas, is a globally renowned singer, songwriter, and actress. She rose to fame as the lead vocalist of Destiny's Child before launching a highly successful solo career. Her debut album, *Dangerously in Love* (2003), was a major success. Known for her powerful voice and stage presence, Beyoncé has won numerous Grammy Awards and continues to influence the music industry with her innovative work and activism.",
-                        "songs": [
+                        bio: "Beyoncé, born Beyoncé Giselle Knowles on September 4, 1981, in Houston, Texas, is a globally renowned singer, songwriter, and actress. She rose to fame as the lead vocalist of Destiny's Child before launching a highly successful solo career. Her debut album, *Dangerously in Love* (2003), was a major success. Known for her powerful voice and stage presence, Beyoncé has won numerous Grammy Awards and continues to influence the music industry with her innovative work and activism.",
+                        songs: [
                             "Crazy in Love",
                             "Single Ladies (Put a Ring on It)",
                             "Halo",
@@ -1608,13 +1608,13 @@
                 ]
             },
             "b7d2a1de-b8b2-4d7a-a07d-5b4d3b682c4f": {
-                "name": "Akon",
-                "id": "b7d2a1de-b8b2-4d7a-a07d-5b4d3b682c4f",
-                "image": "/public/images/temp/akon.png",
-                "details": [
+                name: "Akon",
+                _id: "b7d2a1de-b8b2-4d7a-a07d-5b4d3b682c4f",
+                image: "/public/images/temp/akon.png",
+                details: [
                     {
-                        "bio": "Akon, born Aliaune Thiam on April 16, 1973, in Saint-Louis, Senegal, is an American singer, songwriter, and producer known for his distinctive voice and blend of R&B, hip-hop, and dancehall. His debut album, *Trouble* (2004), featured hit singles like 'Locked Up.' Akon is also recognized for his philanthropic work and contributions to music production, and he has collaborated with numerous artists across genres.",
-                        "songs": [
+                        bio: "Akon, born Aliaune Thiam on April 16, 1973, in Saint-Louis, Senegal, is an American singer, songwriter, and producer known for his distinctive voice and blend of R&B, hip-hop, and dancehall. His debut album, *Trouble* (2004), featured hit singles like 'Locked Up.' Akon is also recognized for his philanthropic work and contributions to music production, and he has collaborated with numerous artists across genres.",
+                        songs: [
                             "Smack That",
                             "Lonely",
                             "Don't Matter",
@@ -1630,13 +1630,13 @@
                 ]
             },
             "d1a73c18-8d8c-4e3b-b1e0-4b7a8c5ea317": {
-                "name": "50 Cent",
-                "id": "d1a73c18-8d8c-4e3b-b1e0-4b7a8c5ea317",
-                "image": "/public/images/temp/50-cents.png",
-                "details": [
+                name: "50 Cent",
+                _id: "d1a73c18-8d8c-4e3b-b1e0-4b7a8c5ea317",
+                image: "/public/images/temp/50-cents.png",
+                details: [
                     {
-                        "bio": "50 Cent, born Curtis James Jackson III on July 6, 1975, in Queens, New York, is an influential American rapper, actor, and businessman. He gained prominence with his debut album, *Get Rich or Die Tryin'* (2003), which included hits like 'In Da Club.' 50 Cent is known for his gritty lyrics and has won several Grammy Awards. His impact extends beyond music into film and television production.",
-                        "songs": [
+                        bio: "50 Cent, born Curtis James Jackson III on July 6, 1975, in Queens, New York, is an influential American rapper, actor, and businessman. He gained prominence with his debut album, *Get Rich or Die Tryin'* (2003), which included hits like 'In Da Club.' 50 Cent is known for his gritty lyrics and has won several Grammy Awards. His impact extends beyond music into film and television production.",
+                        songs: [
                             "In Da Club",
                             "Candy Shop",
                             "21 Questions",
@@ -1652,13 +1652,13 @@
                 ]
             },
             "edb98b23-4f2f-4b68-bb5d-3d6c062d1b23": {
-                "name": "Miley Cyrus",
-                "id": "edb98b23-4f2f-4b68-bb5d-3d6c062d1b23",
-                "image": "/public/images/temp/miley-cyrus.png",
-                "details": [
+                name: "Miley Cyrus",
+                _id: "edb98b23-4f2f-4b68-bb5d-3d6c062d1b23",
+                image: "/public/images/temp/miley-cyrus.png",
+                details: [
                     {
-                        "bio": "Miley Cyrus, born Destiny Hope Cyrus on November 23, 1992, in Franklin, Tennessee, is an American singer, songwriter, and actress known for her dynamic and evolving musical style. She first gained fame as the star of Disney's *Hannah Montana* before launching a successful solo career. Her debut album, *Breakout* (2008), featured hits like 'See You Again.' Cyrus is known for her distinctive voice and bold image, and she continues to be a significant figure in pop music.",
-                        "songs": [
+                        bio: "Miley Cyrus, born Destiny Hope Cyrus on November 23, 1992, in Franklin, Tennessee, is an American singer, songwriter, and actress known for her dynamic and evolving musical style. She first gained fame as the star of Disney's *Hannah Montana* before launching a successful solo career. Her debut album, *Breakout* (2008), featured hits like 'See You Again.' Cyrus is known for her distinctive voice and bold image, and she continues to be a significant figure in pop music.",
+                        songs: [
                             "Wrecking Ball",
                             "Party in the U.S.A.",
                             "Malibu",
@@ -1674,13 +1674,13 @@
                 ]
             },
             "c5d9f4e2-7c6b-4f15-87d4-7b86579efb4d": {
-                "name": "Rihanna",
-                "id": "c5d9f4e2-7c6b-4f15-87d4-7b86579efb4d",
-                "image": "/public/images/temp/rihanna.png",
-                "details": [
+                name: "Rihanna",
+                _id: "c5d9f4e2-7c6b-4f15-87d4-7b86579efb4d",
+                image: "/public/images/temp/rihanna.png",
+                details: [
                     {
-                        "bio": "Rihanna, born Robyn Rihanna Fenty on February 20, 1988, in Saint Michael, Barbados, is a globally renowned singer, songwriter, and entrepreneur. She gained international fame with her debut album, *Music of the Sun* (2005), and has since become a major force in music with hits like 'Umbrella' and 'We Found Love.' Known for her distinctive voice and fashion sense, Rihanna has won multiple Grammy Awards and is also recognized for her successful ventures in fashion and beauty, including her Fenty Beauty line.",
-                        "songs": [
+                        bio: "Rihanna, born Robyn Rihanna Fenty on February 20, 1988, in Saint Michael, Barbados, is a globally renowned singer, songwriter, and entrepreneur. She gained international fame with her debut album, *Music of the Sun* (2005), and has since become a major force in music with hits like 'Umbrella' and 'We Found Love.' Known for her distinctive voice and fashion sense, Rihanna has won multiple Grammy Awards and is also recognized for her successful ventures in fashion and beauty, including her Fenty Beauty line.",
+                        songs: [
                             "Umbrella",
                             "We Found Love",
                             "Diamonds",
@@ -1695,7 +1695,7 @@
                     }
                 ]
             }     
-    },
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",

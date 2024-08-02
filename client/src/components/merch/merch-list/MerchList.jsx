@@ -10,8 +10,6 @@ export default function MerchList() {
     
     const [merchItems] = useGetAllMerchItems();
 
-    console.log(merchItems)
-
     return (
         <>
             <section className="section-tiles">
