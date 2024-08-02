@@ -17,4 +17,21 @@ export function useGetAllSingers() {
     },[])
 
     return [singers, setSingers];    
-} 
+}
+
+export function useGetOneSinger(singerID) {
+    const [singer, setSinger] = useState([]);
+
+    useEffect(() => {
+        (async()=>{
+            try {
+                const result = await singersAPI.getOne(singerID);
+                setSinger(result);
+            } catch (err) {
+                console.log(err);
+            }
+        })();
+    },[singerID])
+
+    return [singer, setSinger];    
+}

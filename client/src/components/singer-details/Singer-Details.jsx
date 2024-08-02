@@ -1,7 +1,20 @@
 import './Singer-Details.scss'
+import { useParams } from 'react-router-dom'
 import Comments from './comments/Comments'
+import { useGetOneSinger } from '../../hook/useSingers'
 
 export default function SingerDetails() {
+    const { singerName, singerID } = useParams();
+    const [singer, setSinger] = useGetOneSinger(singerID)
+
+    if (!singer || !singer.details ) {
+        console.log('1')
+        return;
+    }
+
+    const songs = singer.details[0].songs;
+    const bio = singer.details[0].bio;
+
     return (
         <>
             <div className="section-singer bg-white">
@@ -10,14 +23,14 @@ export default function SingerDetails() {
                         <div className="grid">
                             <div className="grid__col--1of3">
                                 <div className="section__image">
-                                    <img src="/public/images/temp/lady-gaga.png" alt="" />
+                                    <img src={singer.image} alt={singer.name} />
                                 </div>
                             </div>
 
                             <div className="grid__col--2of3">
                                 <div className="section__entry">
-                                    <h1>Lady Gaga</h1>
-                                    <p>Lady Gaga, born Stefani Joanne Angelina Germanotta on March 28, 1986, in New York City, is a globally acclaimed singer, songwriter, and actress. Known for her flamboyant fashion and powerful vocals, Gaga gained fame with her debut album, The Fame (2008), which included hits like "Just Dance" and "Poker Face." She has won numerous awards, including 13 Grammys, and is celebrated for her versatility across music genres. Gaga also starred in the critically acclaimed film A Star Is Born (2018), earning an Oscar for Best Original Song for "Shallow." Her influence extends beyond music, advocating for mental health and LGBTQ+ rights.</p>
+                                    <h1>{singer.name}</h1>
+                                    <p>{bio}</p>
                                 </div>
                             </div>
                         </div>
@@ -30,16 +43,9 @@ export default function SingerDetails() {
 
                         <div className="section__list">
                             <ul>
-                                <li>Bad Romance</li>
-                                <li>Poker Face</li>
-                                <li>Just Dance (feat. Colby O'Donis)</li>
-                                <li>Shallow (with Bradley Cooper)</li>
-                                <li>Born This Way</li>
-                                <li>Alejandro</li>
-                                <li>Paparazzi</li>
-                                <li>Telephone (feat. Beyoncé)</li>
-                                <li>The Edge of Glory</li>
-                                <li>Million Reasons</li>
+                                {songs.map((song, i) => (
+                                    <li key={`${singer._id}-song-${i}`}>{song}</li>
+                                ))}
                             </ul>
                         </div>
 

@@ -17,7 +17,7 @@ export default function Singer({
 
                     <div className="tile__content">
                         <h3>{singer.name}</h3>
-                        <Link to={`singers/${slug}`} className="btn">Details</Link>
+                        <Link to={`singers/${slug}/${singer._id}`} className="btn">Details</Link>
                     </div>
                 </div>
             </div>

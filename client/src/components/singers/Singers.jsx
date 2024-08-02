@@ -5,7 +5,6 @@ import Singer from '../singer/Singer'
 export default function Singers() {
     const [singers] = useGetAllSingers()
 
-    console.log(singers)
     return (
         <>
             <section className="section-singers white">
