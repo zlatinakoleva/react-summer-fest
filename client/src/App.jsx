@@ -32,7 +32,6 @@ function App() {
                     <Route path="/merch" element={<Merch />}/>
                     <Route path="/logout" element={<Logout />}/>
                     <Route path="/about/singers/lady-gaga" element={<SingerDetails />}/>
-
                 </Routes>
                 { background && (
                     <Routes>

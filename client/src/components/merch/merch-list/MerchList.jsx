@@ -8,7 +8,9 @@ export default function MerchList() {
     const location = useLocation();
     const {userType} = useAuthContext();
     
-    const [merchItems] = useGetAllMerchItems()
+    const [merchItems] = useGetAllMerchItems();
+
+    console.log(merchItems)
 
     return (
         <>

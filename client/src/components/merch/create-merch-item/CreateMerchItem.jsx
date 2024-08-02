@@ -1,27 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import useForm from '../../../hook/useForm';
-import { useCreateMerchItem } from '../../../hook/useMerchItems';
-
-const FormKeys = {
-    Title: 'title', 
-    Description: 'description',
-    Image: 'image'
-}
+import { useCreateMerchItem, useGetAllMerchItems } from '../../../hook/useMerchItems';
 
 const initialValues = {
-    [FormKeys.Title]: '',
-    [FormKeys.Description]: '',
-    [FormKeys.Image]: ''
+    title: '',
+    description: '',
+    image: ''
 }
 
 export default function CreateMerchItem() {
     const navigate = useNavigate();
     const createMerchItem = useCreateMerchItem();
+    const [merchItems, dispatch] = useGetAllMerchItems()
 
     const createMerchItemHandler = async (formValues) => {
         try {
-            const {} = await createMerchItem(formValues)
-            navigate(-1)
+            const response = await createMerchItem(formValues)
+            dispatch({
+                type: 'ADD_ITEM', 
+                payload: response
+            })
+            navigate('/merch')
         } catch (err) {
             console.log(err.message);
         }
@@ -53,9 +52,9 @@ export default function CreateMerchItem() {
                                         type="text"
                                         className="field"
                                         id="title"
-                                        name={FormKeys.Title}
+                                        name="title"
                                         onChange={onChange}
-                                        defaultValue={formValues[FormKeys.Title]}
+                                        defaultValue={formValues.title}
                                         placeholder="Keychains"
                                         />
                                     </div>
@@ -68,9 +67,9 @@ export default function CreateMerchItem() {
                                         <textarea
                                         className="field"
                                         id="description"
-                                        name={FormKeys.Description}
+                                        name="description"
                                         onChange={onChange}
-                                        defaultValue={formValues[FormKeys.Description]}
+                                        defaultValue={formValues.description}
                                         placeholder="Durable keychains with intricate festival designs. Perfect for keys, backpacks, or purses."
                                     />
                                     </div>
@@ -84,9 +83,9 @@ export default function CreateMerchItem() {
                                         type="text"
                                         className="field"
                                         id="image"
-                                        name={FormKeys.Image}
+                                        name="image"
                                         onChange={onChange}
-                                        defaultValue={formValues[FormKeys.Image]}
+                                        defaultValue={formValues.image}
                                         placeholder="../public/images/svg/poster.svg"
                                         />
                                     </div>

@@ -1,18 +1,21 @@
 import './MerchItem.scss'
 import { useAuthContext } from "../../../contexts/authContext";
 import { Link, useLocation } from 'react-router-dom';
-import { useDeleteMerchItem } from '../../../hook/useMerchItems';
+import { useDeleteMerchItem, useGetAllMerchItems } from '../../../hook/useMerchItems';
 
 export default function MerchItem({
     merchItem
 }) {
     const {userType} = useAuthContext();
     const location = useLocation();
-    const deleteMerchItem = useDeleteMerchItem()
+    const deleteMerchItem = useDeleteMerchItem();
 
     const deleteMerchItemHandler = async () => {
         try {
-            await deleteMerchItem(`${merchItem.id}`)
+            const isConfirmed = confirm(`Are you sure you want to delete ${merchItem.title}`)
+            if (isConfirmed) {
+                await deleteMerchItem(`${merchItem._id}`);
+            }
         } catch (err) {
             console.log(err.message);
         }
@@ -24,7 +27,7 @@ export default function MerchItem({
                 { userType == "user_admin" && 
                     <div className="admin-buttons">
                         <Link 
-                            to={`/merch/edit-merch-item/${merchItem.id}`} 
+                            to={`/merch/edit-merch-item/${merchItem._id}`} 
                             state={{ background: location }} 
                             className="btn-plain" 
                         >

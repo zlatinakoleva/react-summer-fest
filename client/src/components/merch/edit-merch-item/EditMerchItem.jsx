@@ -1,41 +1,29 @@
 import { useNavigate, useParams } from "react-router-dom";
 import useForm from '../../../hook/useForm';
-import { useEditMerchItem } from '../../../hook/useMerchItems';
+import { useEditMerchItem, useGetAllMerchItems } from '../../../hook/useMerchItems';
 import { useGetOneMerchItem } from "../../../hook/useMerchItems";
+import { useEffect } from "react";
 
-const FormKeys = {
-    Title: 'title', 
-    Description: 'description',
-    Image: 'image'
-}
 
 export default function EditMerchItem() {
     const navigate = useNavigate();
     const { merchItemID } = useParams();
     const editMerchItem = useEditMerchItem();
+    const [merchItems, dispatch] = useGetAllMerchItems(merchItemID)
 
     const [merchItem] = useGetOneMerchItem(merchItemID)
 
-    const initialValues = merchItem ? {
-        [FormKeys.Title]: merchItem.title || '',
-        [FormKeys.Description]: merchItem.description || '',
-        [FormKeys.Image]: merchItem.image || ''
-    } : {
-        [FormKeys.Title]: '',
-        [FormKeys.Description]: '',
-        [FormKeys.Image]: ''
-    };
-
     const editMerchItemHandler = async (formValues) => {
         try {
-            await editMerchItem(formValues, merchItemID)
+            const updatedMerchItem = await editMerchItem(formValues, merchItemID)
+            dispatch({type: 'EDIT_ITEM', payload: updatedMerchItem})
             navigate(-1)
         } catch (err) {
             console.log(err.message);
         }
     }
-
-    const { formValues, onChange, onSubmit } = useForm(editMerchItemHandler, initialValues);
+    
+    const { formValues, onChange, onSubmit } = useForm(editMerchItemHandler, merchItem);
 
     return (
         <>
@@ -61,9 +49,9 @@ export default function EditMerchItem() {
                                             type="text"
                                             className="field"
                                             id="title"
-                                            name={FormKeys.Title}
+                                            name="title"
                                             onChange={onChange}
-                                            defaultValue={formValues[FormKeys.Title]}
+                                            defaultValue={formValues.title}
                                         />
                                     </div>
                                 </div>
@@ -75,9 +63,9 @@ export default function EditMerchItem() {
                                         <textarea
                                             className="field"
                                             id="description"
-                                            name={FormKeys.Description}
+                                            name="description"
                                             onChange={onChange}
-                                            defaultValue={formValues[FormKeys.Description]}
+                                            defaultValue={formValues.description}
                                         />
                                     </div>
                                 </div>
@@ -90,9 +78,9 @@ export default function EditMerchItem() {
                                             type="text"
                                             className="field"
                                             id="image"
-                                            name={FormKeys.Image}
+                                            name="image"
                                             onChange={onChange}
-                                            defaultValue={formValues[FormKeys.Image]}
+                                            defaultValue={formValues.image}
                                         />
                                     </div>
                                 </div>

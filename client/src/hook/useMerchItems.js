@@ -1,22 +1,47 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 import * as merchAPI from  '../api/merch-api';
 
+function reducer(state, action) {
+    switch (action.type) {
+        case 'GET_ALL':
+            console.log('ini load')
+            return action.payload;
+        case 'EDIT_ITEM':
+            return {
+                ...state.filter(item => item.id !== action.payload.id),
+                "item": action.payload
+            };
+        case 'ADD_ITEM':
+            console.log('add item')
+            return [...state, action.payload];
+        default:
+            return state;
+    }
+}
+
 export function useGetAllMerchItems() {
-    const [merchItems, setMerchItems] = useState([]);
-    
+    const [merchItems, dispatch] = useReducer(reducer,[]); 
+
     useEffect(() => {
-        merchAPI.getAll()
-            .then(result => setMerchItems(result))
-            .catch(err => {
+        (async() => {
+            try {
+                const result = await merchAPI.getAll()
+                dispatch({type: 'GET_ALL', payload: result})
+            } catch (err) {
                 console.log(err);
-            });
+            }
+        })();
     }, []);
 
-    return [merchItems]
+    return [merchItems, dispatch]
 }
 
 export function useGetOneMerchItem(merchItemID) {
-    const [merchItem, setMerchItem] = useState([]);
+    const [merchItem, setMerchItem] = ({
+        title: '',
+        description: '',
+        image: ''
+    });
     
     useEffect(() => {
         merchAPI.getOne(merchItemID)
@@ -36,16 +61,13 @@ export function useCreateMerchItem() {
 }
 
 export function useEditMerchItem() {
-    
-    const editMerchItem = (merchItemData, merchItemID) => {
-        merchAPI.edit(merchItemData, merchItemID);
-    }
+    const editMerchItem = (merchItemData, merchItemID) => merchAPI.edit(merchItemData, merchItemID);
     
     return editMerchItem;
 }
 
 export function useDeleteMerchItem() {
     const deleteMerchItem = (merchItemID) => merchAPI.remove(merchItemID);
-    
+
     return deleteMerchItem
 }
