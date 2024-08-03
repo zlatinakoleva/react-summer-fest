@@ -73,7 +73,7 @@ export default function Comments() {
                                                         <p>
                                                             <Link to="/login" className="link" state={{ background: location }}>
                                                                 Login
-                                                            </Link> or <Link to="/login" className="link"  state={{ background: location }}>
+                                                            </Link> or <Link to="/register" className="link"  state={{ background: location }}>
                                                                 Register
                                                             </Link> to leave comment
                                                         </p>

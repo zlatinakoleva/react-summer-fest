@@ -12,21 +12,7 @@ export default function Footer() {
                             <Link to="/">
                                 <img src="../public/images/svg/concert.svg" alt="" />
                             </Link>
-                        </div>
-
-                        <div className="footer__nav">
-                            <ul>
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-                                <li>
-                                    <a href="#">Merch</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact</a>
-                                </li>
-                            </ul>
-                        </div>                        
+                        </div>                  
                         
                         <div className="socials">
                             <ul>

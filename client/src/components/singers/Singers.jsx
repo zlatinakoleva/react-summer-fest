@@ -23,7 +23,7 @@ export default function Singers() {
                             <div className="grid">
                                 {singers.length > 0 
                                     ? singers.map(singer => <Singer key={singer._id} singer={singer}/>)
-                                    : <h3>No Singers yet</h3> 
+                                    : <div className="grid__col"><h3>No Singers yet</h3></div> 
                                 }
                             </div>
                         </div>

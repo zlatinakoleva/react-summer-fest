@@ -41,6 +41,11 @@ const request = async (method, url, data) => {
         return
     }
 
+    if (response.status === 403) {
+        localStorage.setItem('auth', '')
+        location.reload();
+    }
+
     const result = await response.json();
     
     if (!response.ok) {

@@ -1009,6 +1009,8 @@ blockquote:last-child {
 } 
 
 
+body,
+html,
 body * {
     ::-webkit-scrollbar {
         width: 1rem;
@@ -1016,12 +1018,22 @@ body * {
       
     ::-webkit-scrollbar-track {
         background-color: var(--blue-100);
-        border-radius: 1rem;
     }
     
     /* Handle */
     &::-webkit-scrollbar-thumb {
-        background: var(--blue-200);
-        border-radius: 1rem
+        background: var(--blue-400);
     }
+}
+
+/* ------------------------------------------------------------ *\
+    main
+\* ------------------------------------------------------------ */
+
+.main {
+    position: relative;
+    min-height: 100svh;
+    background-color: #fff;
+    margin-bottom: 35rem;
+    z-index: 4;
 }

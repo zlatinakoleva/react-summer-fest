@@ -23,7 +23,6 @@ import NotFound from './components/not-found/NotFound';
 function App() {
     const location = useLocation();
     const background = location.state && location.state.background;
-    const isHome = location.pathname == "/";
 
     const { userType } = useAuthContext();
 
@@ -64,9 +63,7 @@ function App() {
                     </Routes>
                 }
             </div>
-            { !isHome && (
-                <Footer/>
-            )}
+            <Footer/>
         </div>
     )
 }
