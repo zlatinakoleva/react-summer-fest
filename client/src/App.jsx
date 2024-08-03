@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.scss'
 
-import { AuthContextProvider } from './contexts/authContext';
+import { useAuthContext } from './contexts/authContext';
 
 import Header from './components/header/Header'
 import Home from './components/home/Home'
@@ -18,16 +18,19 @@ import SingerDetails from './components/singer-details/Singer-Details';
 import Raffle from './components/raffle/Raffle';
 import EditSinger from './components/singer-details/edit-singer/EditSinger';
 import AddSinger from './components/singers/add-singer/AddSinger';
+import NotFound from './components/not-found/NotFound';
 
 function App() {
     const location = useLocation();
     const background = location.state && location.state.background;
-    const isHome = location.pathname == "/" 
+    const isHome = location.pathname == "/";
+
+    const { userType } = useAuthContext();
 
     return (
-        <AuthContextProvider>
-            <div className="wrapper">
-                <Header/>
+        <div className="wrapper">
+            <Header/>
+            <div className="main">
                 <Routes location={background || location}>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
@@ -35,23 +38,36 @@ function App() {
                     <Route path="/merch" element={<Merch />}/>
                     <Route path="/logout" element={<Logout />}/>
                     <Route path="/Raffle" element={<Raffle />}/>
-                    <Route path="/about/singers/:singerName/:singerId" element={<SingerDetails />}/>
+                    <Route path="/about/singers/:singerName/:singerId/" element={<SingerDetails />}/>
+                    <Route path='*' element={<NotFound/>}/>
+                    { userType == 'user_admin' && 
+                        <>
+                            <Route path="merch/create-merch-item" element={<CreateMerchItem />} />
+                            <Route path="merch/edit-merch-item/:merchItemID" element={<EditMerchItem />} />
+                            <Route path="about/singers/:singerName/:singerId/edit-singer" element={<EditSinger />} />
+                            <Route path="about/singers/add-singer" element={<AddSinger />} />
+                        </>
+                    }
                 </Routes>
-                { background && (
+                { background && 
                     <Routes>
                         <Route path="login" element={<Login/>}/>
                         <Route path="register" element={<Register/>}/>
-                        <Route path="merch/create-merch-item" element={<CreateMerchItem />} />
-                        <Route path="merch/edit-merch-item/:merchItemID" element={<EditMerchItem />} />
-                        <Route path="about/singers/:singerName/:singerId/edit-singer" element={<EditSinger />} />
-                        <Route path="about/singers/add-singer" element={<AddSinger />} />
+                        {userType == 'user_admin' && 
+                            <>
+                                <Route path="merch/create-merch-item" element={<CreateMerchItem />} />
+                                <Route path="merch/edit-merch-item/:merchItemID" element={<EditMerchItem />} />
+                                <Route path="about/singers/:singerName/:singerId/edit-singer" element={<EditSinger />} />
+                                <Route path="about/singers/add-singer" element={<AddSinger />} />
+                            </>
+                        }
                     </Routes>
-                )}
-                { !isHome && (
-                    <Footer/>
-                )}
+                }
             </div>
-        </AuthContextProvider>
+            { !isHome && (
+                <Footer/>
+            )}
+        </div>
     )
 }
 

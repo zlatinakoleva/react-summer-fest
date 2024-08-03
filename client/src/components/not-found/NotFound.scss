@@ -1,0 +1,19 @@
+/* ------------------------------------------------------------ *\
+    section-not-found
+\* ------------------------------------------------------------ */
+
+.section-not-found {
+    .section__inner {
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 25rem;
+        line-height: 1.2;
+        margin-bottom: 0;
+    }
+}

@@ -41,7 +41,6 @@ export function useGetOneSinger(singerId,pageKey) {
         (async()=>{
             try {
                 const result = await singersAPI.getOne(singerId);
-                console.log(result)
                 setSinger(result);
             } catch (err) {
                 console.log(err);
