@@ -973,7 +973,6 @@ blockquote:last-child {
         border-radius: 2.4rem;
         max-height: 70vh;
         overflow-y: auto;
-        box-shadow: 0 0 0 24px var(--white);;
     }
 
     .popup__close {
@@ -1000,6 +999,7 @@ blockquote:last-child {
     .popup__inner {
         max-width: 70vw;
         max-height: 70vh;
+        box-shadow: 0 0 0 24px var(--white);
     }  
 
     .form .form__actions {

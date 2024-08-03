@@ -15,18 +15,6 @@ export default function Singers() {
             <section className="section-singers white">
                 <div className="shell">
                     <div className="section__inner">
-                        {userType == "user_admin" && 
-                            <div className="section__admin-actions">
-                                <ul className="buttons">
-                                    <li>
-                                        <Link to={`/about/singers/add-singer`} state={{ background: location }} className='btn'>
-                                            Add Singer
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        }
-
                         <div className="section__head">
                             <h1>Our Singers</h1>
                         </div>
@@ -39,6 +27,18 @@ export default function Singers() {
                                 }
                             </div>
                         </div>
+
+                        {userType == "user_admin" && 
+                            <div className="section__admin-actions">
+                                <ul className="buttons">
+                                    <li>
+                                        <Link to={`/about/singers/add-singer`} state={{ background: location }} className='btn'>
+                                            Add Singer
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
                     </div>
                 </div>
             </section>

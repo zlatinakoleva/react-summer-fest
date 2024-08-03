@@ -1,20 +1,38 @@
 import './Singer-Details.scss'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import Comments from './comments/Comments'
-import { useGetOneSinger } from '../../hook/useSingers'
+import { useDeleteSinger, useGetOneSinger } from '../../hook/useSingers'
 import { useAuthContext } from "../../contexts/authContext";
 import { stringToSlug } from '../../utils/slugUtil';
 import { Link } from 'react-router-dom';
+import DeleteModal from '../delete-modal/DeleteModal';
+import { useState } from 'react';
 
 
 export default function SingerDetails() {
     const location = useLocation()
+    const navigate = useNavigate()
     const { singerName, singerId } = useParams();
     const [singer] = useGetOneSinger(singerId, location.key);
     const {userType} = useAuthContext();
+    const deleteSinger = useDeleteSinger(singerId)
+    const [deleteClick, setDeleteClick] = useState(false)
 
     if (!singer || !singer.details ) {
         return;
+    }
+
+    const singerDeleteClickHandler = () => {
+        setDeleteClick(true)
+    }
+
+    const preventSingerDelete = () => {
+        setDeleteClick(false)
+    }
+    
+    const confirmSingerDelete = () => {
+        deleteSinger(singerId)
+        navigate('/about')
     }
 
     const songs = singer.details.songs;
@@ -33,7 +51,7 @@ export default function SingerDetails() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="btn">Delete</a>
+                                    <a href="#" className="btn" onClick={singerDeleteClickHandler}>Delete</a>
                                 </li>
                             </ul>
                         </div>
@@ -74,6 +92,8 @@ export default function SingerDetails() {
                     </div>
                 </div>
             </div>
+
+            {deleteClick && <DeleteModal confirmDelete={confirmSingerDelete} closeDelete={preventSingerDelete} deleteTargetName={singer.name}/>}
 
             <Comments/>
         </>

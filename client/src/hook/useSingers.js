@@ -17,7 +17,6 @@ function singersReducer(state, action) {
     }
 }
 
-
 export function useGetAllSingers(pageKey) {
     const [singers, dispatch] = useReducer(singersReducer,[]);
 
@@ -54,13 +53,19 @@ export function useGetOneSinger(singerId,pageKey) {
 }
 
 export function useEditSinger() {
-    const editMerchItem = (singerData, singerID) => singersAPI.edit(singerData, singerID);
+    const editSinger = (singerData, singerId) => singersAPI.edit(singerData, singerId);
     
-    return editMerchItem;
+    return editSinger;
 }
 
 export function useAddSinger() {
-    const editMerchItem = (singerData) => singersAPI.create(singerData);
+    const addSinger = (singerData) => singersAPI.create(singerData);
     
-    return editMerchItem;
+    return addSinger;
+}
+
+export function useDeleteSinger() {
+    const deleteSinger = (singerId) => singersAPI.remove(singerId);
+
+    return deleteSinger
 }
