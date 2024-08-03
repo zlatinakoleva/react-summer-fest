@@ -5,6 +5,11 @@
 .section-singer {
     padding: 20rem 0 12rem;
 
+    .section__admin-actions {
+        text-align: right;
+        margin-bottom: 2.4rem;
+    }
+
     .section__head {
         margin-bottom: 12rem;
     }
@@ -70,6 +75,7 @@
     .section__list {
         max-width: 50%;
         flex: 0 0 50%;
+        height: 30rem;
 
         ul {
             list-style-type: none;

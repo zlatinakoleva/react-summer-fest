@@ -16,6 +16,8 @@ import Logout from './components/logout/Logout';
 import EditMerchItem from './components/merch/edit-merch-item/EditMerchItem';
 import SingerDetails from './components/singer-details/Singer-Details';
 import Raffle from './components/raffle/Raffle';
+import EditSinger from './components/singer-details/edit-singer/EditSinger';
+import AddSinger from './components/singers/add-singer/AddSinger';
 
 function App() {
     const location = useLocation();
@@ -41,6 +43,8 @@ function App() {
                         <Route path="register" element={<Register/>}/>
                         <Route path="merch/create-merch-item" element={<CreateMerchItem />} />
                         <Route path="merch/edit-merch-item/:merchItemID" element={<EditMerchItem />} />
+                        <Route path="about/singers/:singerName/:singerId/edit-singer" element={<EditSinger />} />
+                        <Route path="about/singers/add-singer" element={<AddSinger />} />
                     </Routes>
                 )}
                 { !isHome && (

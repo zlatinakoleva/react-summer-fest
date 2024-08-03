@@ -20,6 +20,7 @@ export const edit = async (singerData, singerId) => {
 
 export const create = async (singerData) => {
     const result = await request.post(baseUrl, singerData);
+    console.log(baseUrl)
 
     return result;
 };

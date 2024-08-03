@@ -521,6 +521,10 @@ blockquote:last-child {
         margin-bottom: .8rem;
     }
 
+    .form__label--hidden {
+        display: none;
+    }
+
     input,
     select,
     textarea {
@@ -542,7 +546,7 @@ blockquote:last-child {
         min-height: 12rem;
         height: 12rem;
         padding: 1.5rem;
-        resize: none;
+        resize: vertical;
     }
 
     .form__head {
@@ -575,6 +579,19 @@ blockquote:last-child {
         }
     }
 
+    .form__remove {
+        width: 3.2rem;
+        height: 3.2rem;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+        background-color: transparent;
+        position: absolute; 
+        top: 50%; 
+        right: .4rem;
+        transform: translate(0, -50%);
+    }
+
     .form__field {
         padding: 1rem 1rem 0;
         background-color: $white;
@@ -582,6 +599,13 @@ blockquote:last-child {
         border-radius: $box-radius;
         height: 100%;
         position: relative;
+    }
+
+    .form__field--alt {
+        padding: 1rem;
+        height: auto;
+        border: none;
+        box-shadow: var(--shadow-2);
     }
 
     .form__row--1of2 {
@@ -943,10 +967,13 @@ blockquote:last-child {
         width: 100%;
         margin: 0 auto;
         padding: 8rem 6.4rem;
-        background-color: var(--white);
+        background-color: var(--white);;
         position: relative;
         z-index: 2;
         border-radius: 2.4rem;
+        max-height: 70vh;
+        overflow-y: auto;
+        box-shadow: 0 0 0 24px var(--white);;
     }
 
     .popup__close {
@@ -962,5 +989,39 @@ blockquote:last-child {
             width: 100%;
             height: auto;
         }
+    }
+}
+
+/* ------------------------------------------------------------ *\
+    popup--large
+\* ------------------------------------------------------------ */
+
+.popup--large {
+    .popup__inner {
+        max-width: 70vw;
+        max-height: 70vh;
+    }  
+
+    .form .form__actions {
+        text-align: right;
+        padding-top: 3.2rem;
+    }
+} 
+
+
+body * {
+    ::-webkit-scrollbar {
+        width: 1rem;
+    }
+      
+    ::-webkit-scrollbar-track {
+        background-color: var(--blue-100);
+        border-radius: 1rem;
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: var(--blue-200);
+        border-radius: 1rem
     }
 }
