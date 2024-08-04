@@ -1,14 +1,8 @@
 import './Raffle.scss'
-import { useGetAllComments } from "../../hook/useComments";
-import { formaDate } from "../../utils/formatDate";
+import AllCommentsList from '../../components/all-comments-list/AllCommentsList';
+
 
 export default function Raffle() {
-    const [comments] = useGetAllComments();
-
-    if (!comments) {
-        return;
-    }
-
     return (
         <>
             <section className="section-raffle">
@@ -48,19 +42,7 @@ export default function Raffle() {
                                 </div>    
                                 <div className="grid__col grid__col--1of2">
                                     <div className="section__comments">
-                                        <ul className="list-comments">
-                                            {comments.map(comment => (
-                                                <li key={comment._id}>
-                                                    <div className="comment">
-                                                        <div className="comment__head">
-                                                            <h5>{comment.author.username} <span>for {comment.singer.name}</span></h5>
-                                                            <small>{formaDate(comment._createdOn)}</small>
-                                                        </div>
-                                                        <p>{comment.content}</p>
-                                                    </div>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                       <AllCommentsList/>
                                     </div>
                                 </div>
                             </div>   

@@ -7,6 +7,7 @@ export const AuthContext = createContext({
     accessToken: '',
     authType: '',
     userType: '',
+    _id: '',
     changeAuthState: (authState = {}) => null,
     logoutAuthState: () => null
 });
@@ -27,6 +28,7 @@ export function AuthContextProvider(props) {
         name: authState?.username,
         accessToken: authState?.accessToken,
         authType: !!authState?.email,
+        userId: authState?._id,
         userType: authState?.status || "user_not_logged",
         changeAuthState,
         logoutAuthState

@@ -1,11 +1,11 @@
 import './Comments.scss'
 import { Link, useParams } from 'react-router-dom'
 import { useAddComment, useGetOneSingerComments } from '../../../hook/useComments';
-import { formaDate } from '../../../utils/formatDate';
 import { useAuthContext } from '../../../contexts/authContext';
 import { useLocation } from 'react-router-dom';
 import { useFormik } from "formik";
 import * as Yup from 'yup'
+import Comment from '../../comment/Comment';
 
 const initialValues = {
     content: ''
@@ -18,17 +18,17 @@ const validSchema = Yup.object({
 export default function Comments() {
     const { singerId }  = useParams();
     const location = useLocation();
-    const [comments, setComments] = useGetOneSingerComments(singerId);
-    const {userType, name } = useAuthContext();
+    const [comments, dispatch] = useGetOneSingerComments(singerId);
+    const {userType, name, userId } = useAuthContext();
     const addComment = useAddComment();
 
     const formik = useFormik({
         initialValues: initialValues,
         validationSchema: validSchema,
         onSubmit: async (formValues) => {
-            const response = await addComment(formValues.content, singerId, name)
-
-            setComments(oldState=> [response, ...oldState])
+            const response = await addComment(formValues.content, singerId, name, userId)
+            dispatch({type: 'ADD_COMMENT', payload: response})
+            formik.resetForm()
         }
     })
 
@@ -85,15 +85,7 @@ export default function Comments() {
                                                 {comments.length > 0
                                                     ? <ul className="list-comments">
                                                         {comments.map(comment => (
-                                                            <li key={comment._id}>
-                                                                <div className="comment">
-                                                                    <div className="comment__head">
-                                                                        <h5>{comment.author?.username}</h5>
-                                                                        <small>{formaDate(comment._createdOn)}</small>
-                                                                    </div>
-                                                                    <p>{comment.content}</p>
-                                                                </div>
-                                                            </li>
+                                                            <Comment key={comment._id} comment={comment} stateChanger={dispatch}/>
                                                         ))}
                                                     </ul>
                                                     : <>

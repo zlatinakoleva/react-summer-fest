@@ -726,6 +726,36 @@ blockquote:last-child {
 }
 
 /* ------------------------------------------------------------ *\
+    form-small
+\* ------------------------------------------------------------ */
+
+.form-small {
+    .form__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: .4rem;
+        flex: 0 0 100%;
+    }
+
+    .form__field-holder {
+        flex: 1;
+
+        textarea {
+            resize: none;
+        }
+    }
+
+    .form__actions {
+        text-align: right;
+        button {
+            margin-left: .4rem;
+        }
+    }
+}
+
+/* ------------------------------------------------------------ *\
   section-form
 \* ------------------------------------------------------------ */
 
