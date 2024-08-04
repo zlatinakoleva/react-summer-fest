@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { useFormik } from "formik";
 import * as Yup from 'yup'
 import Comment from '../../comment/Comment';
+import { useGetAllWinners } from '../../../hook/useWinners';
 
 const initialValues = {
     content: ''
@@ -16,6 +17,7 @@ const validSchema = Yup.object({
 })
 
 export default function Comments() {
+    const [winners] = useGetAllWinners();
     const { singerId }  = useParams();
     const location = useLocation();
     const [comments, dispatch] = useGetOneSingerComments(singerId);
@@ -43,7 +45,7 @@ export default function Comments() {
 
                         <div className="section__body">
                             <div className="grid">
-                                <div className="grid__col grid__col--1of2">
+                                <div className="grid__col">
                                     <div className="section__form">
                                         <div className="form form--alt">
                                             <div className="form__head">
@@ -69,14 +71,16 @@ export default function Comments() {
                                                         </div>
                                                     </form>
                                                     :<>
-                                                        <h4>Ooop, looks like you are not logged &#128577;</h4>
-                                                        <p>
-                                                            <Link to="/login" className="link" state={{ background: location }}>
-                                                                Login
-                                                            </Link> or <Link to="/register" className="link"  state={{ background: location }}>
-                                                                Register
-                                                            </Link> to leave comment
-                                                        </p>
+                                                        <div className="form__message">
+                                                            <h4>Ooop, looks like you are not logged &#128577;</h4>
+                                                            <p>
+                                                                <Link to="/login" className="link" state={{ background: location }}>
+                                                                    Login
+                                                                </Link> or <Link to="/register" className="link"  state={{ background: location }}>
+                                                                    Register
+                                                                </Link> to leave comment
+                                                            </p>
+                                                        </div>
                                                     </>
                                                 }
                                             </div>
@@ -98,43 +102,46 @@ export default function Comments() {
                                     </div>
                                 </div>
 
-                                <div className="grid__col grid__col--1of2">
-                                    <div className="section__content">
-                                        <div className="section__entry">
-                                            <h3>Share Your Favorite Song <br />and Win Big! 🎶✨</h3>
-                                            <p>Leave a comment below with your favorite song by [name] and you'll automatically be entered into our special raffle.</p>
-                                            <p>You have a chance to win one of three amazing vouchers worth <span>$300</span>, <span>$200</span> or <span>$100</span>!</p>
-                                            <p>Don't miss out on this opportunity to win! Just share your favorite song and you might be one of the lucky winners.</p>
-                                            <p>Good luck to all participants! 🎉</p>
-                                        </div>
+                                {!winners.length && 
+                                    <div className="grid__col grid__col--1of2">
+                                        <div className="section__content">
+                                            <div className="section__entry">
+                                                <h3>Share Your Favorite Song <br />and Win Big! 🎶✨</h3>
+                                                <p>Leave a comment below with your favorite song by [name] and you'll automatically be entered into our special raffle.</p>
+                                                <p>You have a chance to win one of three amazing vouchers worth <span>$300</span>, <span>$200</span> or <span>$100</span>!</p>
+                                                <p>Don't miss out on this opportunity to win! Just share your favorite song and you might be one of the lucky winners.</p>
+                                                <p>Good luck to all participants! 🎉</p>
+                                                <Link to="/raffle" className="btn secondary">See Raffle Page</Link>
+                                            </div>
 
-                                        <div className="section__vouchers">
-                                            <ul>
-                                                <li>
-                                                    <div className="voucher">
-                                                        <h2>$300</h2>
-                                                    </div>
-                                                </li>
+                                            <div className="section__vouchers">
+                                                <ul>
+                                                    <li>
+                                                        <div className="voucher">
+                                                            <h2>$300</h2>
+                                                        </div>
+                                                    </li>
 
-                                                <li>
-                                                    <div className="voucher">
-                                                        <h2>$200</h2>
-                                                    </div>
-                                                </li>
+                                                    <li>
+                                                        <div className="voucher">
+                                                            <h2>$200</h2>
+                                                        </div>
+                                                    </li>
 
-                                                <li>
-                                                    <div className="voucher">
-                                                        <h2>$100</h2>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                                    <li>
+                                                        <div className="voucher">
+                                                            <h2>$100</h2>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
 
-                                        <div className="section__content-foot">
-                                            <p>The prize will be in the form of a voucher that can be loaded onto the wristbands everyone will receive at the festival or redeemed at the event's cash desk.</p>
+                                            <div className="section__content-foot">
+                                                <p>The prize will be in the form of a voucher that can be loaded onto the wristbands everyone will receive at the festival or redeemed at the event's cash desk.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                }
                             </div>
                         </div>
                     </div>

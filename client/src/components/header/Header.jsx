@@ -79,6 +79,11 @@ export default function Header() {
                                 Merch
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/raffle">
+                                Lucky Draw
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 
