@@ -1,0 +1,205 @@
+/* ------------------------------------------------------------ *\
+    section-about-tabs
+\* ------------------------------------------------------------ */
+
+.section-about-tabs {
+    padding: 20rem 0 12rem;
+    
+    .section__inner {
+        max-width: 120rem;
+        margin: 0 auto;
+    }
+
+    .section__head {
+        text-align: center;
+        margin-bottom: 12rem;
+    }
+}
+
+.tabs {
+    .tabs__nav {
+        margin-right: -1rem;
+        z-index: 2;
+        display: inline-flex;
+        background-color: var(--blue-100);
+        border-radius: .6rem .6rem 0 0;
+
+        .css-1aquho2-MuiTabs-indicator {
+            background-color: var(--blue-400);
+        }
+
+        button {
+            font-size: 1.8rem;
+            font-weight: 600;
+            padding: 1.2rem 2.4rem;
+            transition: .4s;
+
+            @media (hover: hover) {
+                &:where(:hover, :focus-visible) {
+                    background-color: var(--blue-200);
+                }
+            }
+        }
+
+        .Mui-selected {
+            transition: .4s .4s;
+            background-color: var(--blue-400);
+            color: #fff;
+        }
+    }
+
+    .tabs__body {
+        max-width: 100%;
+        flex: 1;
+        min-height: 40rem;
+        min-height: 80rem;
+        position: relative;
+        overflow: hidden;
+        background-color: var(--blue-100);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 .6rem .6rem .6rem;
+    }
+    
+    .tab {
+        padding: 4rem;
+        opacity: 1;
+        transition: opacity .4s;
+        width: 100%;
+    }
+
+    .tab[hidden] {
+        opacity: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .tab-map {
+        padding: 0;
+    }
+}
+
+.widget-dates {
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        margin-bottom: -.6rem;
+    }
+
+    li:nth-child(even) .dateline {
+        --theme-color: var(--blue-400);
+        padding-left: 8rem;
+        padding-right: 10rem;
+
+        .dateline__date {
+            left: auto;
+            right: 0;
+        }
+
+        .dateline__body {
+            padding-left: 2rem;
+            padding-right: 8rem;
+        }
+    }
+
+    li:nth-child(4n) .dateline {
+        --theme-color: var(--blue-500);
+    }
+
+    li:nth-child(3n) .dateline {
+        --theme-color: var(--blue-300);
+    }
+
+    li:nth-child(5n) .dateline {
+        --theme-color: var(--blue-400);
+    }
+}
+
+.dateline {
+    --theme-color: var(--blue-500);
+    padding-right: 8rem;
+    padding-left: 10rem;
+    position: relative;
+
+    .dateline__date {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width: 16rem;
+        height: 16rem;
+        background-color: var(--theme-color);
+        color: var(--white);
+        border-radius: 50%;
+        padding: 2rem;
+        position: absolute; 
+        top: 50%; 
+        left: 0; 
+        transform: translate(0, -50%);
+        font-size: 2rem;
+        border: .2rem solid var(--blue-100);
+        z-index: 4;
+
+        h4 {
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+        
+        * {
+            font-weight: 500;
+        }
+    }
+
+    .dateline__body {
+        margin: 1rem 0;
+        color: var(--white);
+        padding: 3.2rem 2rem;
+        background-color: var(--theme-color);
+        padding-left: 8rem;
+
+        h5 {
+            margin-bottom: .8rem;
+        }
+    }
+}
+
+.widget-prices {
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style-type: none;
+        margin: -1rem;
+    }
+
+    li {
+        max-width: 50%;
+        flex:  0 0 50%;
+        padding: 1rem;
+    }
+}
+
+.price {
+    padding: 2.4rem;
+    width: 100%;
+    display: inline-block;
+    border-radius: 2rem;
+    text-align: center;
+
+    h4 {
+        margin-bottom: 1.6rem;
+    }    
+
+    h1 {
+        margin-bottom: 1.6rem;
+    }
+}
