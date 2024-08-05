@@ -525,6 +525,10 @@ blockquote:last-child {
         display: none;
     }
 
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active,
     input,
     select,
     textarea {

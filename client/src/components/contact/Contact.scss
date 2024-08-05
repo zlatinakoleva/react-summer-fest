@@ -1,0 +1,44 @@
+/* ------------------------------------------------------------ *\
+    Contacts
+\* ------------------------------------------------------------ */
+
+.section-contacts {
+    padding: 20rem 0;
+    background-color: var(--white);
+
+    .section__head {
+        margin-bottom: 6.4rem;
+    }
+
+    .grid {
+        margin: -2.4rem;
+        .grid__col {
+            padding: 2.4rem;
+        }
+    }
+
+    .form--alt {
+        min-height: 54rem;
+        position: relative;
+        background-color: #fff;
+
+        .form__confirmation {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            padding: 4rem;
+            text-align: center;
+            width: 100%;
+
+            h2 {
+                margin-bottom: 1rem;
+                color: var(--primary);
+            }
+
+            h3 {
+                color: green;
+            }
+        }
+    }
+}
