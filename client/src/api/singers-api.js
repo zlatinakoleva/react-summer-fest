@@ -7,6 +7,12 @@ export const getAll = async () => {
     return result;
 };
 
+export const getFew = async (amount) => {
+    const result = await request.get(`${baseUrl}?offset=${amount}&pageSize=1}`);
+
+    return result;
+};
+
 export const getOne = async (singerId) => {
     const result = await request.get(`${baseUrl}/${singerId}`);
 

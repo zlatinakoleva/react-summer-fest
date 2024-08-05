@@ -1,0 +1,38 @@
+/* ------------------------------------------------------------ *\
+    section-singers-slider
+\* ------------------------------------------------------------ */
+
+.section-singers-slider {
+    padding: 8rem;
+    background-color: var(--white);
+
+    .section__head {
+        text-align: center;
+        margin-bottom: 6.4rem;
+    }
+
+    .section__body {
+        margin-bottom: 6.4rem;
+    }
+
+    .section__foot {
+        text-align: center;
+    }
+
+    .tile-singer {
+        .tile__content {
+            h3 {
+                font-size: 3.2rem;
+                margin-bottom: 0;
+            }
+
+            .btn {
+                display: none;
+            }
+        }
+    }
+
+    .swiper {
+        overflow: visible;
+    }
+}

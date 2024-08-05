@@ -34,6 +34,23 @@ export function useGetAllSingers(pageKey) {
     return [singers, dispatch];    
 }
 
+export function useGetFewSingers(amount) {
+    const [singers, dispatch] = useReducer(singersReducer,[]);
+
+    useEffect(() => {
+        (async()=>{
+            try {
+                const result = await singersAPI.getFew(amount);
+                dispatch({type: 'GET_ALL', payload: result})
+            } catch (err) {
+                console.log(err);
+            }
+        })();
+    },[])
+
+    return [singers, dispatch];    
+}
+
 export function useGetOneSinger(singerId,pageKey) {
     const [singer, setSinger] = useState([]);
 
