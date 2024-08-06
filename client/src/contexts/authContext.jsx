@@ -20,6 +20,7 @@ export function AuthContextProvider(props) {
     }
 
     const logoutAuthState = () => {
+        console.log('tuk')
         setAuthState(null)
     }
     

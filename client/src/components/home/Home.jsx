@@ -6,9 +6,9 @@ export default function Home() {
     return (
         <motion.div 
             className="sections-wrapper"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: .5 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: .5, ease: "easeOut" }}
+            transition={{ duration: .25, ease: "easeOut" }}
         >
             <Hero />
             <SingersSlider/>

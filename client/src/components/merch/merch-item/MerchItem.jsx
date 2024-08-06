@@ -33,10 +33,10 @@ export default function MerchItem({
                             state={{ background: location }} 
                             className="btn-plain" 
                         >
-                            <img src="../../public/images/svg/edit.svg" alt="edit" />
+                            <img src="/public/images/svg/edit.svg" alt="edit" />
                         </Link>
                         <button className="btn-plain" onClick={deleteMerchItemHandler}>
-                            <img src="../../public/images/svg/bin.svg" alt="delete" />
+                            <img src="/public/images/svg/bin.svg" alt="delete" />
                         </button>
                     </div>
                 }

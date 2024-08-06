@@ -5,7 +5,7 @@ export default function Hero() {
     return (
         <div className="hero">
             <div className="hero__background">
-                <img src="../public/images/temp/fest-bg.png" alt="" />
+                <img src="/public/images/temp/fest-bg.png" alt="" />
             </div>
             <div className="shell">
                 <div className="hero__inner">

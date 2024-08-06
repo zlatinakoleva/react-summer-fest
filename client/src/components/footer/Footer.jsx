@@ -10,7 +10,7 @@ export default function Footer() {
                     <div className="footer__inner">
                         <div className="footer__logo">
                             <Link to="/">
-                                <img src="../public/images/svg/concert.svg" alt="" />
+                                <img src="/public/images/svg/concert.svg" alt="" />
                             </Link>
                         </div>                  
                         
@@ -18,17 +18,17 @@ export default function Footer() {
                             <ul>
                                 <li>
                                     <a href="">
-                                        <img src="../public/images/svg/instagram.svg" alt="" />
+                                        <img src="/public/images/svg/instagram.svg" alt="" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="">
-                                        <img src="../public/images/svg/youtube.svg" alt="" />
+                                        <img src="/public/images/svg/youtube.svg" alt="" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="">
-                                        <img src="../public/images/svg/fb.svg" alt="" />
+                                        <img src="/public/images/svg/fb.svg" alt="" />
                                     </a>
                                 </li>
                             </ul>

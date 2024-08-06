@@ -31,7 +31,7 @@ export default function AddSinger() {
             <div className="popup__overlay" onClick={() => navigate(-1)}></div>
             <div className="popup__inner">
                 <div className="popup__close" onClick={() => navigate(-1)}>
-                    <img src="../public/images/svg/close-circle.svg" alt="" />
+                    <img src="/public/images/svg/close-circle.svg" alt="" />
                 </div>
 
 
