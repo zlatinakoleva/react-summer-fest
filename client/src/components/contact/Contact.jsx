@@ -1,4 +1,5 @@
 import './Contact.scss';
+import { motion } from 'framer-motion' 
 import * as Yup from 'yup'
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
@@ -47,7 +48,12 @@ export default function Contact() {
 
     return (
         <>
-            <div className="section-contacts">
+            <motion.div 
+                className="section-contacts"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: .5, ease: "easeOut" }}
+            >
                 <div className="shell">
                     <div className="section__inner">
                         <div className="section__head">
@@ -139,7 +145,7 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

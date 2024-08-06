@@ -49,13 +49,14 @@ export default function CreateMerchItem() {
                                     
                                     <div className="form__controls">
                                         <input
-                                        type="text"
-                                        className="field"
-                                        id="title"
-                                        name="title"
-                                        onChange={onChange}
-                                        defaultValue={formValues.title}
-                                        placeholder="Keychains"
+                                            type="text"
+                                            className="field"
+                                            id="title"
+                                            name="title"
+                                            onChange={onChange}
+                                            defaultValue={formValues.title}
+                                            placeholder="Keychains"
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -65,13 +66,14 @@ export default function CreateMerchItem() {
                                     
                                     <div className="form__controls">
                                         <textarea
-                                        className="field"
-                                        id="description"
-                                        name="description"
-                                        onChange={onChange}
-                                        defaultValue={formValues.description}
-                                        placeholder="Durable keychains with intricate festival designs. Perfect for keys, backpacks, or purses."
-                                    />
+                                            className="field"
+                                            id="description"
+                                            name="description"
+                                            onChange={onChange}
+                                            defaultValue={formValues.description}
+                                            placeholder="Durable keychains with intricate festival designs. Perfect for keys, backpacks, or purses."
+                                            required
+                                        />
                                     </div>
                                 </div>
 
@@ -80,13 +82,14 @@ export default function CreateMerchItem() {
                                     
                                     <div className="form__controls">
                                         <input
-                                        type="text"
-                                        className="field"
-                                        id="image"
-                                        name="image"
-                                        onChange={onChange}
-                                        defaultValue={formValues.image}
-                                        placeholder="../public/images/svg/poster.svg"
+                                            type="text"
+                                            className="field"
+                                            id="image"
+                                            name="image"
+                                            onChange={onChange}
+                                            defaultValue={formValues.image}
+                                            placeholder="../public/images/svg/poster.svg"
+                                            required
                                         />
                                     </div>
                                 </div>

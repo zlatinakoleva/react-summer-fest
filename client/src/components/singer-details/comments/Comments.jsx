@@ -13,7 +13,7 @@ const initialValues = {
 }
 
 const validSchema = Yup.object({
-    comment: Yup.string().min(3, 'Comment must be ate least 3 characters long'),
+    content: Yup.string().min(5, 'Comment must be at least 3 characters long').required('Required')
 })
 
 export default function Comments() {
@@ -60,11 +60,24 @@ export default function Comments() {
                                                             
                                                             <div className="form__controls">
                                                                 <textarea
-                                                                    {...formik.getFieldProps('content')}
                                                                     placeholder={userType == "user_admin" ? "Admins not allowed to leave comments" : "My favorite song is..."}
+                                                                    {...formik.getFieldProps('content')}
                                                                 />
                                                             </div>
+
+                                                            {formik.touched.content && formik.errors.content 
+                                                                ? <div className="form__error">
+                                                                    {formik.errors.content} 
+                                                                </div>
+                                                                : null
+                                                            }
                                                         </div>
+
+                                                        {formik.errors.server &&
+                                                            <div className="form__error">
+                                                                {formik.errors.server}
+                                                            </div>
+                                                        }
 
                                                         <div className="form__actions">
                                                             <button className="btn secondary" type="submit" value="Submit">Submit</button>

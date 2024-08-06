@@ -1,4 +1,5 @@
 import './Singer-Details.scss'
+import { motion } from 'framer-motion' 
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import Comments from './comments/Comments'
 import { useDeleteSinger, useGetOneSinger } from '../../hook/useSingers'
@@ -36,10 +37,14 @@ export default function SingerDetails() {
     }
 
     const songs = singer.details.songs;
-    const bio = singer.details.bio;
 
     return (
-        <>
+        <motion.div 
+            className="sections-wrapper"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: .5, ease: "easeOut" }}
+        >
             <div className="section-singer bg-white">
                 <div className="shell">
                     {userType == "user_admin" && 
@@ -96,6 +101,6 @@ export default function SingerDetails() {
             {deleteClick && <DeleteModal confirmDelete={confirmSingerDelete} closeDelete={preventSingerDelete} deleteTargetName={singer.name}/>}
 
             <Comments/>
-        </>
+        </motion.div>
     )
 }

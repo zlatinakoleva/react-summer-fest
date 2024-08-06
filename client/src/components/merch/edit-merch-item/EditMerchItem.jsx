@@ -51,6 +51,7 @@ export default function EditMerchItem() {
                                             name="title"
                                             onChange={onChange}
                                             defaultValue={formValues.title}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -65,6 +66,7 @@ export default function EditMerchItem() {
                                             name="description"
                                             onChange={onChange}
                                             defaultValue={formValues.description}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -80,6 +82,7 @@ export default function EditMerchItem() {
                                             name="image"
                                             onChange={onChange}
                                             defaultValue={formValues.image}
+                                            required
                                         />
                                     </div>
                                 </div>

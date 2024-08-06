@@ -6,8 +6,10 @@ export default function Logout() {
     const navigate = useNavigate();
     const performLogout = useLogout();
     useEffect(()=>{
-        performLogout()
-        navigate('/')
+        ( async() => {
+            await performLogout()
+            navigate('/')
+        })()
     },[])
     return (<></>)
 }

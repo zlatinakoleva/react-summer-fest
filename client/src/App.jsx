@@ -1,8 +1,10 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import './App.scss'
 
 import { useAuthContext } from './contexts/authContext';
 
+import ErrorBoundary from './components/ErrorBoundary';
 import Header from './components/header/Header'
 import Home from './components/home/Home'
 import Login from './components/login/Login';
@@ -26,28 +28,38 @@ function App() {
 
     const { userType } = useAuthContext();
 
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
     return (
         <div className="wrapper">
-            <Header/>
-            <div className="main">
-                <Routes location={background || location}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/merch" element={<Merch />}/>
-                    <Route path="/logout" element={<Logout />}/>
-                    <Route path="/Raffle" element={<Raffle />}/>
-                    <Route path="/about/singers/:singerName/:singerId/" element={<SingerDetails />}/>
-                    <Route path='*' element={<NotFound/>}/>
-                    { userType == 'user_admin' && 
-                        <>
-                            <Route path="merch/create-merch-item" element={<CreateMerchItem />} />
-                            <Route path="merch/edit-merch-item/:merchItemID" element={<EditMerchItem />} />
-                            <Route path="about/singers/:singerName/:singerId/edit-singer" element={<EditSinger />} />
-                            <Route path="about/singers/add-singer" element={<AddSinger />} />
-                        </>
-                    }
-                </Routes>
+            <ErrorBoundary>
+                <Header/>
+                <div className="main">
+                    <Routes location={background || location}>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/merch" element={<Merch />}/>
+                        <Route path="/raffle" element={<Raffle />}/>
+                        <Route path="/about/singers/:singerName/:singerId/" element={<SingerDetails />}/>
+                        <Route path='*' element={<NotFound/>}/>
+                        { userType != 'user_not_logged' && 
+                            <Route path="/logout" element={<Logout />}/>
+                        }
+                        { userType == 'user_admin' && 
+                            <>
+                                <Route path="merch/create-merch-item" element={<CreateMerchItem />} />
+                                <Route path="merch/edit-merch-item/:merchItemID" element={<EditMerchItem />} />
+                                <Route path="about/singers/:singerName/:singerId/edit-singer" element={<EditSinger />} />
+                                <Route path="about/singers/add-singer" element={<AddSinger />} />
+                            </>
+                        }
+                    </Routes>
+                </div>
                 { background && 
                     <Routes>
                         <Route path="login" element={<Login/>}/>
@@ -62,8 +74,8 @@ function App() {
                         }
                     </Routes>
                 }
-            </div>
-            <Footer/>
+                <Footer/>
+            </ErrorBoundary>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import './Raffle.scss'
+import { motion } from 'framer-motion' 
 import Draw from './draw/Draw';
 import AllCommentsList from '../all-comments-list/AllCommentsList';
 import { useGetAllComments } from "../../hook/useComments";
@@ -15,7 +16,12 @@ export default function Raffle() {
 
     return (
         <>
-            <section className="section-raffle">
+            <motion.section 
+                className="section-raffle"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: .5, ease: "easeOut" }}
+            >
                 <div className="shell">
                     <div className="section__inner">
                         <div className="section__head">
@@ -87,7 +93,7 @@ export default function Raffle() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </motion.section>
         </>
     )
 }
