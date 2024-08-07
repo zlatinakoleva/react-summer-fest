@@ -15,8 +15,8 @@ React Summer Fest is a web application created with React that provides comprehe
 | Type | Email | Password |
 | ---   | --- | --- | 
 | Admin | zk_98@abv.bg | 123456 |
-| Admin | admin@abv.bg | 654321 |
-| Default User | johnsmith@abv.bg | 112233 |
+| Admin | admin@abv.bg | admin |
+| Default User | johnsmith@abv.bg | 123456 |
 
 # Technologies and libraries
 
