@@ -69,26 +69,30 @@ export default function Header() {
                                 About Event
                             </Link>
                         </li>
-                    </ul>
-                </div>
 
-                <div>
-                    <ul>
                         <li>
                             <Link to="/merch">
                                 Merch
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/raffle">
-                                Lucky Draw
-                            </Link>
-                        </li>
                     </ul>
                 </div>
 
                 <div>
                     <ul>
+                        
+                        
+                    </ul>
+                </div>
+
+                <div>
+                    <ul>
+                        <li>
+                            <Link to="/raffle">
+                                Lucky Draw
+                            </Link>
+                        </li>
+
                         <li>
                             <Link to="/contact">
                                 Contact

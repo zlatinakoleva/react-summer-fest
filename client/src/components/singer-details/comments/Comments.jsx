@@ -13,7 +13,7 @@ const initialValues = {
 }
 
 const validSchema = Yup.object({
-    content: Yup.string().min(5, 'Comment must be at least 3 characters long').required('Required')
+    content: Yup.string().min(3, 'Comment must be at least 3 characters long').required('Required')
 })
 
 export default function Comments() {

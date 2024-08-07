@@ -17,17 +17,17 @@ export default function Footer() {
                         <div className="socials">
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a href="https://www.instagram.com/">
                                         <img src="/public/images/svg/instagram.svg" alt="" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="https://www.youtube.com/">
                                         <img src="/public/images/svg/youtube.svg" alt="" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="https://www.facebook.com/">
                                         <img src="/public/images/svg/fb.svg" alt="" />
                                     </a>
                                 </li>

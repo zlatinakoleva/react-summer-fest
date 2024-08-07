@@ -15,9 +15,8 @@
     z-index: 99;
     pointer-events: none;
     color: white;
-    padding: 3.2rem;
+    padding: 2.4rem;
     mix-blend-mode: difference;
-    
 
     div {
         width: 33.33%;
@@ -44,18 +43,42 @@
         list-style-type: none;
         display: inline-flex;
         align-items: center;
-        margin: 0 -.8rem;
+        margin: 0 -1.2rem;
     }
 
     li {
-        padding: 0 .8rem;
+        padding: 0 1.2rem;
     }
 
     a {
         text-decoration: none;
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-weight: 500;
         transition: .4s;
+        letter-spacing: .1em;
+        position: relative;
+        
+        &:before {
+            content: '';
+            width: 0;
+            border-bottom: .2rem solid;
+            position: absolute; 
+            bottom: -.2rem; 
+            left: 0;  
+            transition: width .4s linear;
+        }
+        
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:before { 
+                width: 100%;
+            }
+        }
+        
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            &:hover:before {
+                width: 100%;
+            }
+        }
         
         @media (hover: hover) {
             &:where(:hover, :focus-visible) {
