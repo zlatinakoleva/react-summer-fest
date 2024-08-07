@@ -1321,53 +1321,86 @@
     var protectedData = {
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
-                email: "zk_98@abv.bg",
+    			email: "zk_98@abv.bg",
                 status: "user_admin",
                 username: "Zlatina",
-                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
-            },
-            "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
-                email: "admin@abv.bg",
+                password: "123456",
+    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+    		},
+    		"847ec027-f659-4086-8032-5173e2f9c93a": {
+    			email: "admin@abv.bg",
                 status: "user_admin",
                 username: "Admin",
+                password: "654321",
                 hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
-            },
+    		},
+    		"60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
+                email: "johnsmith@abv.bg",
+                status: "user_logged",
+                username: "John Smith",
+                password: "112233",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+    		},
             "916887d9-4673-4b13-8526-05a52cf6add9": {
                 email: "johndoe@abv.bg",
                 status: "user_logged",
                 username: "John Doe",
-                password: "123",
-                hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa303"
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "916887d9-4673-4b13-8526-05a52cf6ad55": {
                 email: "maxsmith@abv.bg",
                 status: "user_logged",
                 username: "Max Sith",
-                password: "55",
-                hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa303"
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "7d25eb9e-979a-4fe8-b2bc-4faaf60e67e7": {
                 email: "jessiedoe@abv.bg",
                 status: "user_logged",
                 username: "Jessie",
-                password: "sd",
-                hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa350"
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "7d25eb9e-979a-4fe8-b2bc-4faaf60e67e8": {
                 email: "kellyjones@abv.bg",
                 status: "user_logged",
                 username: "Kelly",
-                password: "sd",
-                hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa332"
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "7d25eb9e-979a-4fe8-b2bc-4faaf60e6888": {
                 email: "tomjones@abv.bg",
                 status: "user_logged",
                 username: "Tommas",
-                password: "sd",
-                hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa303"
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+            },
+            "7d25eb9e-979a-4fe8-b2bc-4faaf60e6878": {
+                email: "michael@abv.bg",
+                status: "user_logged",
+                username: "Michael",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+            },
+            "7d25eb9e-979a-4fe8-b2bc-4faaf60e6586": {
+                email: "dave@abv.bg",
+                status: "user_logged",
+                username: "Dave",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+            },
+            "7d25eb9e-979a-4fe8-b2bc-4faaf60e6555": {
+                email: "peter@abv.bg",
+                status: "user_logged",
+                username: "Peter",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+            },
+            "7d25eb9e-979a-4fe8-b2bc-4fsdf60e6555": {
+                email: "molly@abv.bg",
+                status: "user_logged",
+                username: "Molly",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+            },
+            "7d25eb9e-979a-4fe8-b2bc-4f65f60e6555": {
+                email: "betty@abv.bg",
+                status: "user_logged",
+                username: "Betty",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             }
-
         },
         sessions: {
         }
@@ -1524,6 +1557,27 @@
                     ]
                 }
             },
+            "d3c1a1a9-1d4a-4f89-8fbe-4a5b6f728c94": {
+                name: "Selena Gomez",
+                _id: "d3c1a1a9-1d4a-4f89-8fbe-4a5b6f728c94",
+                image: "/public/images/temp/selena-gomez.png",
+                details: {
+                    bio: "Selena Gomez, born on July 22, 1992, in Grand Prairie, Texas, is a renowned American singer, actress, and producer. She gained fame as the lead character in the Disney Channel series *Wizards of Waverly Place* before launching a successful music career. Her debut solo album, *Stars Dance* (2013), featured hits like 'Come & Get It.' Gomez is known for her versatile voice and has received numerous awards. She is also recognized for her philanthropic work and advocacy on mental health issues.",
+                    songs: [
+                        "Come & Get It",
+                        "Love You Like a Love Song",
+                        "Bad Liar",
+                        "The Heart Wants What It Wants",
+                        "Wolves",
+                        "Back to You",
+                        "Hands to Myself",
+                        "It Ain't Me",
+                        "Good for You",
+                        "Lose You to Love Me"
+                    ]
+                }
+            },
+    
             "2a1e5f4e-87d4-4b7f-ae40-989d06546a57": {
                 name: "Eminem",
                 _id: "2a1e5f4e-87d4-4b7f-ae40-989d06546a57",
@@ -1581,6 +1635,26 @@
                         "Candyman",
                         "Lady Marmalade",
                         "Burlesque"
+                    ]
+                }
+            },
+            "e4b8f70a-2d3e-4c3f-9ebd-7d3e5a628d4e": {
+                name: "Taylor Swift",
+                _id: "e4b8f70a-2d3e-4c3f-9ebd-7d3e5a628d4e",
+                image: "/public/images/temp/taylor-swift.png",
+                details: {
+                    bio: "Taylor Swift, born on December 13, 1989, in Reading, Pennsylvania, is an American singer-songwriter known for her narrative songwriting style. She gained fame with her self-titled debut album in 2006 and has since become one of the best-selling music artists of all time. Swift's musical style has evolved from country to pop and indie folk, with albums like *Fearless*, *1989*, and *folklore*. She has won numerous awards, including 11 Grammys, and is celebrated for her influence on the music industry and popular culture.",
+                    songs: [
+                        "Love Story",
+                        "You Belong with Me",
+                        "Shake It Off",
+                        "Blank Space",
+                        "Bad Blood",
+                        "Look What You Made Me Do",
+                        "Cardigan",
+                        "Willow",
+                        "We Are Never Ever Getting Back Together",
+                        "I Knew You Were Trouble"
                     ]
                 }
             },
@@ -1705,52 +1779,51 @@
                 }
             }
         },
-        winners: {},
         comments: {
             "0a272c58-b7ea-4e09-a000-7ec988248f66": {
-                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e67e7",
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
                 content: "I love Bad Romance",
                 _singerId: "3987279d-0ad4-4afb-8ca9-5b256ae3b298",
                 _createdOn: 1614260681375,
                 _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
             },
             "e1f4bb32-5a43-48ea-8fb4-27ba9a3ae731": {
-                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6ad55",
                 _singerId: "3987279d-0ad4-4afb-8ca9-5b256ae3b298",
                 content: "Poker Face\n",
                 _createdOn: 1722604026579,
                 _id: "e1f4bb32-5a43-48ea-8fb4-27ba9a3ae731"
             },
             "ecd9e19d-7594-49e2-a8b2-ec522e28d70f": {
-                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e6888",
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e67e7",
                 _singerId: "f3d7bc9a-98d1-4d23-9c9e-dcd1f4f5b244",
                 content: "Just Give Me a Reason\n",
                 _createdOn: 1722604052264,
                 _id: "ecd9e19d-7594-49e2-a8b2-ec522e28d70f"
             },
             "e73caf9a-c6a2-41fb-bdc1-6b2cf3210de4": {
-                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e67e8",
                 _singerId: "e21b0c3a-d223-46f4-b80c-85e2b1b8d09b",
                 content: "She Wolf\n",
                 _createdOn: 1722604060482,
                 _id: "e73caf9a-c6a2-41fb-bdc1-6b2cf3210de4"
             },
             "fe801aad-3e1f-4f49-9d14-3338925b376d": {
-                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e6888",
                 _singerId: "a7d99b6d-1b3e-4d9e-9e4a-f5a2b728d82b",
                 content: "Burlesque",
                 _createdOn: 1722604070536,
                 _id: "fe801aad-3e1f-4f49-9d14-3338925b376d"
             },
             "353a9e2d-8040-4c70-bc50-9a26b6490ed8": {
-                _ownerId: "916887d9-4673-4b13-8526-05a52cf6ad55",
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e6878",
                 _singerId: "a7d99b6d-1b3e-4d9e-9e4a-f5a2b728d82b",
                 content: "What a Girl Wants\n",
                 _createdOn: 1722604077202,
                 _id: "353a9e2d-8040-4c70-bc50-9a26b6490ed8"
             },
             "9857294e-2216-4a44-b6dd-d857301facda": {
-                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e67e8",
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e6586",
                 _singerId: "b2e2f61c-4b7e-46a5-a892-f9e5c5104de4",
                 content: "Sicko Mode\n",
                 _createdOn: 1722604086045,
@@ -1764,284 +1837,105 @@
                 _id: "1bd83aa2-b680-4e0e-a047-385492147fb8"
             },
             "826fd7a7-7020-4b81-aab5-9374d3c25fa6": {
-                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e67e7",
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e6555",
                 _singerId: "c5d9f4e2-7c6b-4f15-87d4-7b86579efb4d",
                 content: "Don't Stop the Music\n",
                 _createdOn: 1722604109328,
                 _id: "826fd7a7-7020-4b81-aab5-9374d3c25fa6"
             },
             "189621a5-e62e-4d43-adb1-471319532373": {
-                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4fsdf60e6555",
                 _singerId: "db2eafc3-01dc-4cbf-9c62-33e4edb2bba7",
                 content: "That's What I Like\n",
                 _createdOn: 1722604139433,
                 _id: "189621a5-e62e-4d43-adb1-471319532373"
             },
             "5912d251-2272-466c-92d5-6a93833d63bd": {
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4f65f60e6555",
+                _singerId: "edb98b23-4f2f-4b68-bb5d-3d6c062d1b23",
+                content: "We Can't Stop\n",
+                _createdOn: 1722604149182,
+                _id: "5912d251-2272-466c-92d5-6a93833d63bd"
+            },
+            "0a272c58-b7ea-4e09-a000-7ec988248f66": {
                 _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                content: "I love Bad Romance",
+                _singerId: "3987279d-0ad4-4afb-8ca9-5b256ae3b298",
+                _createdOn: 1614260681375,
+                _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
+            },
+            "e1f4bb32-5a43-48ea-8fb4-27ba9a3ae731": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6ad55",
+                _singerId: "3987279d-0ad4-4afb-8ca9-5b256ae3b298",
+                content: "Poker Face\n",
+                _createdOn: 1722604026579,
+                _id: "e1f4bb32-5a43-48ea-8fb4-27ba9a3ae731"
+            },
+            "ecd9e19d-7594-49e2-a8b2-ec522e28d70f": {
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e67e7",
+                _singerId: "f3d7bc9a-98d1-4d23-9c9e-dcd1f4f5b244",
+                content: "Just Give Me a Reason\n",
+                _createdOn: 1722604052264,
+                _id: "ecd9e19d-7594-49e2-a8b2-ec522e28d70f"
+            },
+            "e73caf9a-c6a2-41fb-bdc1-6b2cf3210de4": {
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e67e8",
+                _singerId: "e21b0c3a-d223-46f4-b80c-85e2b1b8d09b",
+                content: "She Wolf\n",
+                _createdOn: 1722604060482,
+                _id: "e73caf9a-c6a2-41fb-bdc1-6b2cf3210de4"
+            },
+            "fe801aad-3e1f-4f49-9d14-3338925b376d": {
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e6888",
+                _singerId: "a7d99b6d-1b3e-4d9e-9e4a-f5a2b728d82b",
+                content: "Burlesque",
+                _createdOn: 1722604070536,
+                _id: "fe801aad-3e1f-4f49-9d14-3338925b376d"
+            },
+            "353a9e2d-8040-4c70-bc50-9a26b6490ed8": {
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e6878",
+                _singerId: "a7d99b6d-1b3e-4d9e-9e4a-f5a2b728d82b",
+                content: "What a Girl Wants\n",
+                _createdOn: 1722604077202,
+                _id: "353a9e2d-8040-4c70-bc50-9a26b6490ed8"
+            },
+            "9857294e-2216-4a44-b6dd-d857301facda": {
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e6586",
+                _singerId: "b2e2f61c-4b7e-46a5-a892-f9e5c5104de4",
+                content: "Sicko Mode\n",
+                _createdOn: 1722604086045,
+                _id: "9857294e-2216-4a44-b6dd-d857301facda"
+            },
+            "1bd83aa2-b680-4e0e-a047-385492147fb8": {
+                _ownerId: "916887d9-4673-4b13-8526-05a52cf6add9",
+                _singerId: "ab3a2c0c-8b6a-4d3f-bdd3-07d688639fc0",
+                content: "Drunk in Love\n",
+                _createdOn: 1722604098793,
+                _id: "1bd83aa2-b680-4e0e-a047-385492147fb8"
+            },
+            "826fd7a7-7020-4b81-aab5-9374d3c25fa6": {
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4faaf60e6555",
+                _singerId: "c5d9f4e2-7c6b-4f15-87d4-7b86579efb4d",
+                content: "Don't Stop the Music\n",
+                _createdOn: 1722604109328,
+                _id: "826fd7a7-7020-4b81-aab5-9374d3c25fa6"
+            },
+            "189621a5-e62e-4d43-adb1-471319532373": {
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4fsdf60e6555",
+                _singerId: "db2eafc3-01dc-4cbf-9c62-33e4edb2bba7",
+                content: "That's What I Like\n",
+                _createdOn: 1722604139433,
+                _id: "189621a5-e62e-4d43-adb1-471319532373"
+            },
+            "5912d251-2272-466c-92d5-6a93833d63bd": {
+                _ownerId: "7d25eb9e-979a-4fe8-b2bc-4f65f60e6555",
                 _singerId: "edb98b23-4f2f-4b68-bb5d-3d6c062d1b23",
                 content: "We Can't Stop\n",
                 _createdOn: 1722604149182,
                 _id: "5912d251-2272-466c-92d5-6a93833d63bd"
             }
         },
-        records: {
-            i01: {
-                name: "John1",
-                val: 1,
-                _createdOn: 1613551388703
-            },
-            i02: {
-                name: "John2",
-                val: 1,
-                _createdOn: 1613551388713
-            },
-            i03: {
-                name: "John3",
-                val: 2,
-                _createdOn: 1613551388723
-            },
-            i04: {
-                name: "John4",
-                val: 2,
-                _createdOn: 1613551388733
-            },
-            i05: {
-                name: "John5",
-                val: 2,
-                _createdOn: 1613551388743
-            },
-            i06: {
-                name: "John6",
-                val: 3,
-                _createdOn: 1613551388753
-            },
-            i07: {
-                name: "John7",
-                val: 3,
-                _createdOn: 1613551388763
-            },
-            i08: {
-                name: "John8",
-                val: 2,
-                _createdOn: 1613551388773
-            },
-            i09: {
-                name: "John9",
-                val: 3,
-                _createdOn: 1613551388783
-            },
-            i10: {
-                name: "John10",
-                val: 1,
-                _createdOn: 1613551388793
-            }
-        },
-        catches: {
-            "07f260f4-466c-4607-9a33-f7273b24f1b4": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                angler: "Paulo Admorim",
-                weight: 636,
-                species: "Atlantic Blue Marlin",
-                location: "Vitoria, Brazil",
-                bait: "trolled pink",
-                captureTime: 80,
-                _createdOn: 1614760714812,
-                _id: "07f260f4-466c-4607-9a33-f7273b24f1b4"
-            },
-            "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                angler: "John Does",
-                weight: 554,
-                species: "Atlantic Blue Marlin",
-                location: "Buenos Aires, Argentina",
-                bait: "trolled pink",
-                captureTime: 120,
-                _createdOn: 1614760782277,
-                _id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d"
-            }
-        },
-        movies: {
-            "1240549d-f0e0-497e-ab99-eb8f703713d7": {
-                title: "Black Widow",
-                isWatched: false,
-                _createdAt: 1614935055353,
-                _id: "1240549d-f0e0-497e-ab99-eb8f703713d7"
-            },
-            "143e5265-333e-4150-80e4-16b61de31aa0": {
-                title: "Wonder Woman 1984",
-                isWatched: true,
-                img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
-                _createdAt: 1614935181470,
-                _id: "143e5265-333e-4150-80e4-16b61de31aa0"
-            },
-            "a9bae6d8-793e-46c4-a9db-deb9e3484909": {
-                title: "Top Gun 2",
-                isWatched: false,
-                _createdAt: 1614935268135,
-                _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909"
-            },
-            "a9bae6d8-793e-46c4-a9db-deb9e3484910": {
-                title: "Top Gun 1",
-                isWatched: false,
-                _createdAt: 1614935268136,
-                _id: "a9bae6d8-793e-46c4-a9db-deb9e3484910"
-            },
-            "a9bae6d8-793e-46c4-a9db-deb9e3484911": {
-                title: "Top Gun 2",
-                isWatched: false,
-                _createdAt: 1614935268135,
-                _id: "a9bae6d8-793e-46c4-a9db-deb9e3484911"
-            },
-            "a9bae6d8-793e-46c4-a9db-deb9e3484912": {
-                title: "Home Alone",
-                isWatched: false,
-                _createdAt: 1614935268135,
-                _id: "a9bae6d8-793e-46c4-a9db-deb9e3484912"
-            },
-            "a9bae6d8-793e-46c4-a9db-deb9e3484913": {
-                title: "Home Alone 2",
-                isWatched: false,
-                _createdAt: 1614935268135,
-                _id: "a9bae6d8-793e-46c4-a9db-deb9e3484913"
-            }
-        },
-        likes: {
-        },
-        ideas: {
-            "833e0e57-71dc-42c0-b387-0ce0caf5225e": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "Best Pilates Workout To Do At Home",
-                description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima possimus eveniet ullam aspernatur corporis tempore quia nesciunt nostrum mollitia consequatur. At ducimus amet aliquid magnam nulla sed totam blanditiis ullam atque facilis corrupti quidem nisi iusto saepe, consectetur culpa possimus quos? Repellendus, dicta pariatur! Delectus, placeat debitis error dignissimos nesciunt magni possimus quo nulla, fuga corporis maxime minus nihil doloremque aliquam quia recusandae harum. Molestias dolorum recusandae commodi velit cum sapiente placeat alias rerum illum repudiandae? Suscipit tempore dolore autem, neque debitis quisquam molestias officia hic nesciunt? Obcaecati optio fugit blanditiis, explicabo odio at dicta asperiores distinctio expedita dolor est aperiam earum! Molestias sequi aliquid molestiae, voluptatum doloremque saepe dignissimos quidem quas harum quo. Eum nemo voluptatem hic corrupti officiis eaque et temporibus error totam numquam sequi nostrum assumenda eius voluptatibus quia sed vel, rerum, excepturi maxime? Pariatur, provident hic? Soluta corrupti aspernatur exercitationem vitae accusantium ut ullam dolor quod!",
-                img: "./images/best-pilates-youtube-workouts-2__medium_4x3.jpg",
-                _createdOn: 1615033373504,
-                _id: "833e0e57-71dc-42c0-b387-0ce0caf5225e"
-            },
-            "247efaa7-8a3e-48a7-813f-b5bfdad0f46c": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "4 Eady DIY Idea To Try!",
-                description: "Similique rem culpa nemo hic recusandae perspiciatis quidem, quia expedita, sapiente est itaque optio enim placeat voluptates sit, fugit dignissimos tenetur temporibus exercitationem in quis magni sunt vel. Corporis officiis ut sapiente exercitationem consectetur debitis suscipit laborum quo enim iusto, labore, quod quam libero aliquid accusantium! Voluptatum quos porro fugit soluta tempore praesentium ratione dolorum impedit sunt dolores quod labore laudantium beatae architecto perspiciatis natus cupiditate, iure quia aliquid, iusto modi esse!",
-                img: "./images/brightideacropped.jpg",
-                _createdOn: 1615033452480,
-                _id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c"
-            },
-            "b8608c22-dd57-4b24-948e-b358f536b958": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                title: "Dinner Recipe",
-                description: "Consectetur labore et corporis nihil, officiis tempora, hic ex commodi sit aspernatur ad minima? Voluptas nesciunt, blanditiis ex nulla incidunt facere tempora laborum ut aliquid beatae obcaecati quidem reprehenderit consequatur quis iure natus quia totam vel. Amet explicabo quidem repellat unde tempore et totam minima mollitia, adipisci vel autem, enim voluptatem quasi exercitationem dolor cum repudiandae dolores nostrum sit ullam atque dicta, tempora iusto eaque! Rerum debitis voluptate impedit corrupti quibusdam consequatur minima, earum asperiores soluta. A provident reiciendis voluptates et numquam totam eveniet! Dolorum corporis libero dicta laborum illum accusamus ullam?",
-                img: "./images/dinner.jpg",
-                _createdOn: 1615033491967,
-                _id: "b8608c22-dd57-4b24-948e-b358f536b958"
-            }
-        },
-        catalog: {
-            "53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                make: "Table",
-                model: "Swedish",
-                year: 2015,
-                description: "Medium table",
-                price: 235,
-                img: "./images/table.png",
-                material: "Hardwood",
-                _createdOn: 1615545143015,
-                _id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95"
-            },
-            "f5929b5c-bca4-4026-8e6e-c09e73908f77": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                make: "Sofa",
-                model: "ES-549-M",
-                year: 2018,
-                description: "Three-person sofa, blue",
-                price: 1200,
-                img: "./images/sofa.jpg",
-                material: "Frame - steel, plastic; Upholstery - fabric",
-                _createdOn: 1615545572296,
-                _id: "f5929b5c-bca4-4026-8e6e-c09e73908f77"
-            },
-            "c7f51805-242b-45ed-ae3e-80b68605141b": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                make: "Chair",
-                model: "Bright Dining Collection",
-                year: 2017,
-                description: "Dining chair",
-                price: 180,
-                img: "./images/chair.jpg",
-                material: "Wood laminate; leather",
-                _createdOn: 1615546332126,
-                _id: "c7f51805-242b-45ed-ae3e-80b68605141b"
-            }
-        },
-        teams: {
-            "34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Storm Troopers",
-                logoUrl: "/assets/atat.png",
-                description: "These ARE the droids we're looking for",
-                _createdOn: 1615737591748,
-                _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1"
-            },
-            "dc888b1a-400f-47f3-9619-07607966feb8": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Team Rocket",
-                logoUrl: "/assets/rocket.png",
-                description: "Gotta catch 'em all!",
-                _createdOn: 1615737655083,
-                _id: "dc888b1a-400f-47f3-9619-07607966feb8"
-            },
-            "733fa9a1-26b6-490d-b299-21f120b2f53a": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Minions",
-                logoUrl: "/assets/hydrant.png",
-                description: "Friendly neighbourhood jelly beans, helping evil-doers succeed.",
-                _createdOn: 1615737688036,
-                _id: "733fa9a1-26b6-490d-b299-21f120b2f53a"
-            }
-        },
-        members: {
-            "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-                status: "member",
-                _createdOn: 1616236790262,
-                _updatedOn: 1616236792930
-            },
-            "61a19986-3b86-4347-8ca4-8c074ed87591": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-                status: "member",
-                _createdOn: 1616237188183,
-                _updatedOn: 1616237189016
-            },
-            "8a03aa56-7a82-4a6b-9821-91349fbc552f": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                teamId: "733fa9a1-26b6-490d-b299-21f120b2f53a",
-                status: "member",
-                _createdOn: 1616237193355,
-                _updatedOn: 1616237195145
-            },
-            "9be3ac7d-2c6e-4d74-b187-04105ab7e3d6": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-                status: "member",
-                _createdOn: 1616237231299,
-                _updatedOn: 1616237235713
-            },
-            "280b4a1a-d0f3-4639-aa54-6d9158365152": {
-                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-                status: "member",
-                _createdOn: 1616237257265,
-                _updatedOn: 1616237278248
-            },
-            "e797fa57-bf0a-4749-8028-72dba715e5f8": {
-                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-                status: "member",
-                _createdOn: 1616237272948,
-                _updatedOn: 1616237293676
-            }
-        }
+        winners: {}
     };
     var rules$1 = {
         users: {
